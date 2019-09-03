@@ -1,0 +1,34 @@
+book-output
+book-release*
+
+### NODE.JS ###
+node_modules*
+npm-debug.log
+
+### OSX ###
+*.DS_Store
+._*
+
+### Nosso exemplos ###
+arquivo*.txt
+
+### Eclipse ###
+.settings/
+.project
+.classpath
+build
+bin
+
+### IDEA ###
+.idea/*
+*.iml
+out
+
+# warn IDEA to ignore all files that won't be compiling due to educational examples
+!.idea/compiler.xml
+
+# ignores local travis config folder
+.travis
+
+### others ###
+.vscode

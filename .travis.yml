@@ -1,0 +1,45 @@
+language: ruby
+sudo: required
+
+env:
+  global:
+    secure: eXGVND48r4WyUCELydGxJ5NZURQ5iSaMYT6sLyPAdsjoio5NO+/eF17Fw61YqljrSgy+SuYTtHSeVLET4VOVMry2AH2474UD4DDAZ0Fo21s/u/+wQzIW7szO+gzg+PB/22zM67Yx+9ICo+xm10juHwJRyse9s5EFCgL40LtHPWXc5iTbSJtQFbc3YqPMmrvZZEeGYKAEX6uaqeoSi5PJdDrZfMAcienrbXMx9ASW1LlaJXEr3GKQLHxdfeiEsmVpppeYbfVSRcNRGIgFHS397D2eTVBbsTnxx72dqkR6eYC9z0sifai6baTPx34K3Us1lTx9/bR2DKYohNhea7jinYNSuJB2Lyrf3u4qfJPVLlnSgT+fJYPkmmjDuRepRUK6Kvs4M69YA7FdOhSKHpZlKUtIGjRVFe4CTvkoPAJt+lSaifVKWBD6Q18NqgCkCgijIq3Hn8tjtbWHe256fqZYjio4HBHwfifWG5oxK9ZTKxc9Z+wv2mASHhnmjWpHCtFvib8HMtIizqEVOndg58vMFXJNX1sisZxIV8+I7LSgHU7OBfi2A2Ik5Zeuo46Q7/V+2xl/nOOpC6M7Bgbe+c8gFc8PyJA/3w9+m6xUmRuE5F14D4ItXZvK1lR70oBTlFb0fXNQrEejsKAerXRw1ThbmaFZqcw7ppPQrOM+ZvFcQf0=
+
+jobs:
+  include:
+    - stage: "Semantic Release"
+      name: "Generate a new release and changelogs"
+      language: node_js
+      node_js: lts/*
+      os:
+        - linux
+      install:
+        - npm install
+      script: skip
+      deploy:
+        provider: script
+        api_key: "$GITHUB_TOKEN"
+        node_js: lts/*
+        skip_cleanup: true
+        script: npx semantic-release
+        on:
+          branch: master
+
+    - stage: "GitHub Release"
+      name: "Send the generated files to the new GitHub release"
+      services:
+        - docker
+      env:
+        - COMPOSE_FILE=docker-compose.yml
+      script:
+        - TRAVIS_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+        - git shortlog -s | cut -f 2- > book/contributors.txt
+        - docker-compose run --rm ebook $TRAVIS_TAG
+      deploy:
+        provider: releases
+        api_key: "$GITHUB_TOKEN"
+        file_glob: true
+        file: book-release/*
+        skip_cleanup: true
+        on:
+          branch: master

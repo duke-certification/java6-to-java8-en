@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  ebook:
+    image: asciidoctor/docker-asciidoctor
+    volumes:
+      - .:/documents/
+    entrypoint: scripts/docker-startup.sh
+    network_mode: bridge
+
+  travis:
+    build:
+      context: .
+      dockerfile: ./docker/travis/Dockerfile
+    volumes:
+      - .:/app
+      - ./.travis:/root/.travis
+    network_mode: bridge
