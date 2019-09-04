@@ -1,16 +1,16 @@
 {
-  "author": "Rinaldo Pitzer Jr. e Rodrigo Moutinho",
-  "name": "java6-to-java8",
-  "description": "Guia para ajudar devs Java atualizarem sua certificação Java 6 para Java 8.",
+  "author": "Rinaldo Pitzer Jr. and Rodrigo Moutinho",
+  "name": "java6-to-java8-en",
+  "description": "Guide to help Java devs to upgrade their Java 6 certification to Java 8.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/duke-certification/java6-to-java8.git"
+    "url": "https://github.com/duke-certification/java6-to-java8-en.git"
   },
   "bugs": {
-    "url": "https://github.com/duke-certification/java6-to-java8/issues"
+    "url": "https://github.com/duke-certification/java6-to-java8-en/issues"
   },
-  "homepage": "https://github.com/duke-certification/java6-to-java8",
+  "homepage": "https://github.com/duke-certification/java6-to-java8-en",
   "keywords": [
     "java",
     "java6",
