@@ -14,7 +14,7 @@ public class StringInSwitch_ConstantOnly {
     String apr = "apr";
     
     switch (month) {
-    case jan: // WON'T COMPILE - jan is a common attribute, can change at runtime
+    case jan: // NOT COMPILING - jan is a common attribute, can change at runtime
       System.out.println("January");
       break;
     case FEB: // COMPILES - FEB is a compilation time constant, its value never changes
@@ -23,10 +23,10 @@ public class StringInSwitch_ConstantOnly {
     case mar: // COMPILES - mar is a constant at compilation time, its value never changes
       System.out.println("March");
       break;
-    case apr: // WON'T COMPILE - apr is a common variable, can change at runtime
+    case apr: // NOT COMPILING - apr is a common variable, can change at runtime
       System.out.println("April");
       break;
-    case may: // WON'T COMPILE - may is final but not constant, may change at runtime
+    case may: // NOT COMPILING - may is final but not constant, may change at runtime
       System.out.println("May");
       break;
      }

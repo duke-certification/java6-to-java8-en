@@ -7,7 +7,7 @@ public class StringInSwitch_Type {
     
     Long month = 1L;
     
-    switch (month) { // WON'T COMPILE - Long is not a supported type.
+    switch (month) { // NOT COMPILING - Long is not a supported type.
     case 1L:
       System.out.println("January");
       break;

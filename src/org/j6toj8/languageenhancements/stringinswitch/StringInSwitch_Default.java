@@ -13,7 +13,7 @@ public class StringInSwitch_Default {
       break;
     default: // COMPILES - `Default` can be in any position
       break;
-    case "jan": // WON'T COMPILE - There is already case "jan"
+    case "jan": // NOT COMPILING - There is already case "jan"
       System.out.println("January2");
       break;
     case "mar":
