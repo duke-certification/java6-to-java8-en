@@ -5,8 +5,8 @@ public class StringInSwitch_Empty {
   // tag::code[]
   public static void main(String[] args) {
     
-    String mes = "jan";
-    switch (mes) {} // COMPILA - switch pode estar vazio, mesmo que seja inútil
+    String month = "jan";
+    switch (month) {} // COMPILES - switch may be empty even if it's useless
   }
   // end::code[]
 }

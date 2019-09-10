@@ -5,18 +5,18 @@ public class StringInSwitch_Break {
   // tag::code[]
   public static void main(String[] args) {
     
-    String mes = "jan";
+    String month = "jan";
     
-    switch (mes) {
+    switch (month) {
     case "jan":
-      System.out.println("Janeiro");
+      System.out.println("January");
     default:
-      System.out.println("Não é um mês");
-    case "fev":
-      System.out.println("Fevereiro");
+      System.out.println("Not a month");
+    case "feb":
+      System.out.println("February");
       break;
     case "mar":
-      System.out.println("Março");
+      System.out.println("March");
       break;
     }
   }
