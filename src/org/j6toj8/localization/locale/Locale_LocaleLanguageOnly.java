@@ -7,10 +7,10 @@ public class Locale_LocaleLanguageOnly {
 
   // tag::code[]
   public static void main(String[] args) throws IOException {
-    System.out.println(new Locale("pt")); // português
-    System.out.println(new Locale("en")); // inglês
-    System.out.println(new Locale("es")); // espanhol
-    System.out.println(new Locale("fr")); // francês
+    System.out.println(new Locale("pt")); // portuguese
+    System.out.println(new Locale("en")); // english
+    System.out.println(new Locale("es")); // spanish
+    System.out.println(new Locale("fr")); // french
   }
   // end::code[]
 }
