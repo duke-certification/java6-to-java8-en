@@ -4,18 +4,18 @@ public class FunctionalInterfaces_DefaultStatic {
 
   // tag::code[]
   @FunctionalInterface
-  interface Executavel { // interface funcional
-    void execute(); // método funcional
+  interface Executable { // functional interface
+    void execute(); // functional method
 
-    // métodos adicionais static são permitidos
-    static void execute(Executavel... executaveis) {
-      for (Executavel executavel : executaveis) {
-        executavel.execute();
+    // additional static methods are allowed
+    static void execute(Executable... executables) {
+      for (Executable executable : executables) {
+        executable.execute();
       }
     }
 
-    // métodos adicionais default são permitidos
-    default void executeDuasVezes() {
+    // additional default methods are allowed
+    default void executeTwice() {
       execute();
       execute();
     }

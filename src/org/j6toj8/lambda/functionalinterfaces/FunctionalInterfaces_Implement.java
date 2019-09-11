@@ -4,17 +4,18 @@ public class FunctionalInterfaces_Implement {
 
   // tag::code[]
   @FunctionalInterface
-  interface Executavel { // interface funcional
-    String execute(); // método funcional
+  interface Executable { // functional interface
+    String execute(); // functional method
   }
   
-  class Pessoa implements Executavel {
-    // COMPILA!
-    // interfaces funcionais, como Corredor, não foram feitas para serem implementadas dessa forma
-    // porém é possível e o código compila normalmente
+  class Person implements Executable {
+
+    // COMPILES!
+    // functional interfaces, such as Executable, were not meant to be implemented this way but they are possible, and code compiles normally.
+
     @Override
     public String execute() {
-      return "Executando";
+      return "Executing";
     }
   }
   // end::code[]

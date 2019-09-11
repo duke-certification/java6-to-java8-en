@@ -4,8 +4,8 @@ public class FunctionalInterfaces_ReturnType {
 
   // tag::code[]
   @FunctionalInterface
-  interface Executavel { // interface funcional
-    String execute(); // método funcional com retorno
+  interface Executable { // functional interface
+    String execute(); // functional interface with return
   }
   // end::code[]
 }

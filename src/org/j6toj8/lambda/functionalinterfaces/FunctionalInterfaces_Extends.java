@@ -4,13 +4,13 @@ public class FunctionalInterfaces_Extends {
 
   // tag::code[]
   @FunctionalInterface
-  interface Executavel { // interface funcional
-    void execute(); // método funcional
+  interface Executable { // functional interface
+    void execute(); // functional method
   }
   
   @FunctionalInterface
-  interface Aplicacao extends Executavel {
-    // também é uma interface funcional
+  interface Application extends Executable {
+    // It is also a functional interface
   } 
   // end::code[]
 }

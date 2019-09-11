@@ -4,13 +4,13 @@ public class FunctionalInterfaces_ClassCompilationError {
 
   // tag::code[]
   @FunctionalInterface
-  interface Executavel { // interface funcional
-    void execute(); // método funcional
+  interface Executable { // functional interface
+    void execute(); // functional method
   }
   
   @FunctionalInterface
-  class Piloto { // NÃO COMPILA!
-    // apenas interfaces podem ser anotadas com @FunctionalInterface
+  class Pilot { // NOT COMPILING!
+    // only interfaces can be annotated with @FunctionalInterface
   } 
   // end::code[]
 }

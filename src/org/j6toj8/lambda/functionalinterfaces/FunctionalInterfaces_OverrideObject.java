@@ -4,10 +4,10 @@ public class FunctionalInterfaces_OverrideObject {
 
   // tag::code[]
   @FunctionalInterface
-  interface Executavel { // interface funcional
-    void execute(); // método funcional
+  interface Executable { // functional interface
+    void execute(); // functional method
 
-    // sobrescrevendo métodos de Object
+    // overriding Object methods
     @Override
     String toString();
     @Override
