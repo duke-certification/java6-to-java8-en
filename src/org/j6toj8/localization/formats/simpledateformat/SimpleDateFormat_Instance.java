@@ -11,7 +11,7 @@ public class SimpleDateFormat_Instance {
     SimpleDateFormat simpleDate = new SimpleDateFormat("dd MM yy");
     SimpleDateFormat simpleTime = new SimpleDateFormat("HH mm ss");
 
-    Date date = new Date(1000000000000L); // data em quantidade de milissegundos desde 01/01/1970
+    Date date = new Date(1000000000000L); // date in milliseconds since 01/01/1970
 
     System.out.println(simpleDateTime.format(date));
     System.out.println(simpleDate.format(date));

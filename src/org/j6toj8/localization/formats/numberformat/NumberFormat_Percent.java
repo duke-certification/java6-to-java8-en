@@ -12,14 +12,14 @@ public class NumberFormat_Percent {
     NumberFormat percentFormatEnUS = NumberFormat.getPercentInstance(new Locale("en", "US"));
     NumberFormat percentFormatFrFR = NumberFormat.getPercentInstance(new Locale("fr", "FR"));
 
-    // Percentual para String
+    // Percent to String
     double d = 0.9;
 
     System.out.println("pt_BR: " + percentFormatPtBR.format(d));
     System.out.println("en_US: " + percentFormatEnUS.format(d));
     System.out.println("fr_FR: " + percentFormatFrFR.format(d));
 
-    // String para Percentual
+    // String para Percent
     String s = "80%";
 
     try {

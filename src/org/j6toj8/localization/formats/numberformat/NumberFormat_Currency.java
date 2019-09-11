@@ -12,14 +12,14 @@ public class NumberFormat_Currency {
     NumberFormat currencyFormatEnUS = NumberFormat.getCurrencyInstance(new Locale("en", "US"));
     NumberFormat currencyFormatFrFR = NumberFormat.getCurrencyInstance(new Locale("fr", "FR"));
 
-    // Valor monetário para String
+    // Monetary value to String
     double d = 1000.05;
 
     System.out.println("pt_BR: " + currencyFormatPtBR.format(d));
     System.out.println("en_US: " + currencyFormatEnUS.format(d));
     System.out.println("fr_FR: " + currencyFormatFrFR.format(d));
 
-    // String para valor Monetário
+    // String to monetary value
     String s = "R$ 1000,05";
 
     try {

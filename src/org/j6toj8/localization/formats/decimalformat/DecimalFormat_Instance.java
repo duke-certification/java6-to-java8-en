@@ -8,31 +8,31 @@ public class DecimalFormat_Instance {
     // tag::code[]
     double d = 12345.67;
 
-    // omite todas as posições vazias, utiliza separador a cada 3 casas
+    // omit all empty positions, use separator every 3 places
     DecimalFormat instance1 = new DecimalFormat("###,###.###");
     System.out.println("###,###.###: " + instance1.format(d));
 
-    // omite as posições vazias na parte decimal, utiliza separador a cada 3 casas
+    // omits empty positions in decimal, uses separator every 3 places
     DecimalFormat instance2 = new DecimalFormat("000,000.###");
     System.out.println("000,000.###: " + instance2.format(d));
 
-    // omite as posições vazias na parte inteira, utiliza separador a cada 3 casas
+    // omits empty positions on integer, uses separator every 3 places
     DecimalFormat instance3 = new DecimalFormat("###,###.000");
     System.out.println("###,###.000: " + instance3.format(d));
 
-    // apresenta todas as posições, utiliza separador a cada 3 casas
+    // displays all positions, uses separator every 3 boxes
     DecimalFormat instance4 = new DecimalFormat("000,000.000");
     System.out.println("000,000.000: " + instance4.format(d));
 
-    // omite todas as posições vazias, não utiliza separador
+    // omits all empty positions, does not use separator
     DecimalFormat instance5 = new DecimalFormat("###.##");
     System.out.println("###.##: " + instance5.format(d));
 
-    // apresenta todas as posições, não utiliza separador
+    // displays all positions, does not use separator
     DecimalFormat instance6 = new DecimalFormat("000000.000");
     System.out.println("000000.000: " + instance6.format(d));
 
-    // omite todas as posições vazias, não utiliza separador e não apresenta casas decimais
+    // omits all empty positions, does not separator and decimal places
     DecimalFormat instance7 = new DecimalFormat("###");
     System.out.println("###: " + instance7.format(d));
     // end::code[]

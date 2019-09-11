@@ -8,7 +8,7 @@ public class DecimalFormat_Strings {
     // tag::code[]
     double d = 12345.67;
 
-    DecimalFormat decimalFormat = new DecimalFormat("Número ###,###.### formatado");
+    DecimalFormat decimalFormat = new DecimalFormat("Number ###,###.### formatted");
     System.out.println(decimalFormat.format(d));
     // end::code[]
   }
