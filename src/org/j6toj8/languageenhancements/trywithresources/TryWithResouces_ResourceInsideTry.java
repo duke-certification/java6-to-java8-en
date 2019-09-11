@@ -5,7 +5,7 @@ public class TryWithResouces_ResourceInsideTry {
   // tag::code[]
   static class Door implements AutoCloseable {
     @Override
-    public void close() { // chamado automaticamente pelo try-with-resources
+    public void close() { // called automatically by try-with-resources
       System.out.println("Closed door.");
     }
   }
