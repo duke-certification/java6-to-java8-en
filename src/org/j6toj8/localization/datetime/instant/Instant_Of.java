@@ -8,7 +8,7 @@ public class Instant_Of {
     // tag::code[]
     System.out.println(Instant.ofEpochMilli(1000000000000L));
     System.out.println(Instant.ofEpochSecond(1000000000));
-    System.out.println(Instant.ofEpochSecond(1000000000, 123000000)); // com nanossegundos
+    System.out.println(Instant.ofEpochSecond(1000000000, 123000000)); // with nanoseconds
     // end::code[]
   }
 }

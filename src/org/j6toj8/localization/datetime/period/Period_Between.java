@@ -7,10 +7,10 @@ public class Period_Between {
 
   public static void main(String[] args) {
     // tag::code[]
-    LocalDate nascimento = LocalDate.of(1990, 8, 6);
-    LocalDate hoje = LocalDate.now();
-    Period idade = Period.between(nascimento, hoje);
-    System.out.println(idade);
+    LocalDate birth = LocalDate.of(1990, 8, 6);
+    LocalDate today = LocalDate.now();
+    Period age = Period.between(birth, today);
+    System.out.println(age);
     // end::code[]
   }
 }

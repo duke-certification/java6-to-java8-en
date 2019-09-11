@@ -8,9 +8,9 @@ public class LocalDateTime_Immutability {
     // tag::code[]
     LocalDateTime localDateTime = LocalDateTime.of(2019, 5, 20, 9, 20);
     System.out.println(localDateTime);
-    localDateTime.plusHours(1); // chamada perdida - a nova data/hora não foi armazenada em uma variável
+    localDateTime.plusHours(1); // missed call - new date/time was not stored in a variable
     System.out.println(localDateTime);
-    localDateTime = localDateTime.plusHours(1); // chamada útil - data/hora armazenada na variável
+    localDateTime = localDateTime.plusHours(1); // useful call - date/time stored in variable
     System.out.println(localDateTime);
     // end::code[]
   }

@@ -9,16 +9,16 @@ public class Instant_Manipulate {
     // tag::code[]
     Instant instant = Instant.ofEpochMilli(1000000000000L);
     System.out.println(instant);
-    System.out.println("+2 segundos: " + instant.plusSeconds(2));
-    System.out.println("+2 nanosegundos: " + instant.plusNanos(2));
-    System.out.println("+2 microssegundos: " + instant.plus(2, ChronoUnit.MICROS));
-    System.out.println("+2 milissegundos: " + instant.plus(2, ChronoUnit.MILLIS));
-    System.out.println("-2 segundos: " + instant.minusSeconds(2));
-    System.out.println("-2 nanosegundos: " + instant.minusNanos(2));
-    System.out.println("-2 microssegundos: " + instant.minus(2, ChronoUnit.MICROS));
-    System.out.println("-2 milissegundos: " + instant.minus(2, ChronoUnit.MILLIS));
-    System.out.println("+2 dias: " + instant.plus(2, ChronoUnit.DAYS));
-    System.out.println("+2 semanas: " + instant.plus(2, ChronoUnit.WEEKS)); // erro de execução
+    System.out.println("+2 seconds: " + instant.plusSeconds(2));
+    System.out.println("+2 nanoseconds: " + instant.plusNanos(2));
+    System.out.println("+2 microseconds: " + instant.plus(2, ChronoUnit.MICROS));
+    System.out.println("+2 milliseconds: " + instant.plus(2, ChronoUnit.MILLIS));
+    System.out.println("-2 seconds: " + instant.minusSeconds(2));
+    System.out.println("-2 nanoseconds: " + instant.minusNanos(2));
+    System.out.println("-2 microseconds: " + instant.minus(2, ChronoUnit.MICROS));
+    System.out.println("-2 milliseconds: " + instant.minus(2, ChronoUnit.MILLIS));
+    System.out.println("+2 days: " + instant.plus(2, ChronoUnit.DAYS));
+    System.out.println("+2 weeks: " + instant.plus(2, ChronoUnit.WEEKS)); // runtime error
     // end::code[]
   }
 }

@@ -6,10 +6,10 @@ public class Duration_BiggerValues {
 
   public static void main(String[] args) {
     // tag::code[]
-    System.out.println(Duration.ofMinutes(120)); // 120 minutos
-    System.out.println(Duration.ofMinutes(121)); // 2 horas e 1 minuto
-    System.out.println(Duration.ofMinutes(119)); // 1 hora e 59 minutos
-    System.out.println(Duration.ofSeconds(10000)); // 2 horas, 46 minutos e 40 segundos
+    System.out.println(Duration.ofMinutes(120)); // 120 minutes
+    System.out.println(Duration.ofMinutes(121)); // 2 hours e 1 minute
+    System.out.println(Duration.ofMinutes(119)); // 1 hour e 59 minutes
+    System.out.println(Duration.ofSeconds(10000)); // 2 hours, 46 minutes e 40 seconds
     // end::code[]
   }
 }

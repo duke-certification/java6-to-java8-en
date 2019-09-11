@@ -6,7 +6,7 @@ public class LocalDate_Constructor {
 
   public static void main(String[] args) {
     // tag::code[]
-    LocalDate localDate = new LocalDate(); // NÃO COMPILA! - não possui construtor padrão
+    LocalDate localDate = new LocalDate(); // NOT COMPILING! - has no default constructor
     System.out.println(localDate);
     // end::code[]
   }
