@@ -3,26 +3,26 @@ package org.j6toj8.languageenhancements.staticdefaultininterfaces;
 public class StaticDefaultInInterfaces_RepeatedDefaultSuper {
 
   // tag::code[]
-  interface Corredor {
-    default String correr() {
-      return "Correndo";
+  interface Runner {
+    default String run() {
+      return "Running";
     }
   }
   
-  interface Piloto {
-    default String correr() {
-      return "Piloto Correndo";
+  interface Pilot {
+    default String run() {
+      return "Pilot Running";
     }
   }
   
-  static class Pessoa implements Corredor, Piloto { // COMPILA - mantém a implementação do Corredor no método correr()
+  static class Person implements Runner, Pilot { // COMPILES - keep the Runner implementation in the run() method
     @Override
-    public String correr() {
-      return Corredor.super.correr();
+    public String run() {
+      return Runner.super.run();
     }
     
     public static void main(String[] args) {
-      System.out.println(new Pessoa().correr());
+      System.out.println(new Person().run());
     }
   }
   // end::code[]

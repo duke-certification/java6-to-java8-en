@@ -5,16 +5,16 @@ import java.io.FileNotFoundException;
 public class TryWithResouces_WithCatchFinally {
   
   // tag::code[]
-  static class Porta implements AutoCloseable {
+  static class Door implements AutoCloseable {
     @Override
-    public void close() throws Exception { // chamado automaticamente pelo try-with-resources
-      System.out.println("Porta fechada.");
-      throw new Exception(); // lança Exception
+    public void close() throws Exception { // called automatically by try-with-resources
+      System.out.println("Closed door.");
+      throw new Exception(); // throws Exception
     }
   }
   
   public static void main(String[] args) throws FileNotFoundException {
-    try (Porta porta = new Porta()) { // Porta instanciada dentro da instrução try-with-resources
+    try (Door door = new Door()) { // Door instantiated within try-with-resources statement
       System.out.println("try");
     } catch (Exception e) {
       System.out.println("catch");

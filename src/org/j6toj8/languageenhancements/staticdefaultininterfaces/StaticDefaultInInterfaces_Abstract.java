@@ -5,20 +5,20 @@ import java.io.IOException;
 public class StaticDefaultInInterfaces_Abstract {
 
   // tag::code[]
-  interface Corredor {
-    default String correr() { // COMPILA - método default não é abstract
-      return "Correndo";
+  interface Runner {
+    default String run() { // COMPILES - default method is not abstract
+      return "Running";
     }
     
-    abstract default String correrRapido() { // NÃO COMPILA - método default não pode ser declarado abstract
-      return "Correndo Rápido";
+    abstract default String runFast() { // NOT COMPILING - default method cannot be declared abstract
+      return "Running fast";
     }
     
-    String correrDevagar(); // COMPILA - método comum, é abstract por padrão, mesmo que de forma implícita
+    String runSlow(); // COMPILES - common method, is abstract by default, even if implicitly
 
-    abstract String correrExtremo(); // COMPILA - método comum, declarado abstract de forma explícita
+    abstract String runExtreme(); // COMPILES - common method, explicitly declared abstract
     
-    abstract static double calculeVelocidade(int d, int t) { // NÃO COMPILA - método static não pode ser declarado abstract
+    abstract static double calculateSpeed(int d, int t) { // NOT COMPILING - static method cannot be declared abstract
       return d / t;
     }
   }

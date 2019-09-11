@@ -3,24 +3,24 @@ package org.j6toj8.languageenhancements.trywithresources;
 public class TryWithResouces_Order {
   
   // tag::code[]
-  static class Porta implements AutoCloseable {
+  static class Door implements AutoCloseable {
     @Override
-    public void close() { // chamado automaticamente pelo try-with-resources
-      System.out.println("Porta fechada.");
+    public void close() { // called automatically by try-with-resources
+      System.out.println("Closed door.");
     }
   }
   
-  static class Gaveta implements AutoCloseable {
+  static class Drawer implements AutoCloseable {
     @Override
-    public void close() { // chamado automaticamente pelo try-with-resources
-      System.out.println("Gaveta fechada.");
+    public void close() { // called automatically by try-with-resources
+      System.out.println("Drawer closed.");
     }
   }
 
   public static void main(String[] args) {
-    try (Porta porta = new Porta();
-      Gaveta gaveta = new Gaveta()) {
-      System.out.println("Olá.");
+    try (Door door = new Door();
+      Drawer drawer = new Drawer()) {
+      System.out.println("Hello.");
     }
   }
   // end::code[]

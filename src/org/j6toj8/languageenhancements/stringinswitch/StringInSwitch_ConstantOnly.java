@@ -3,31 +3,31 @@ package org.j6toj8.languageenhancements.stringinswitch;
 public class StringInSwitch_ConstantOnly {
 
   // tag::code[]
-  private static final String FEV = "fev";
+  private static final String FEB = "feb";
   private static String jan = "jan";
   
-  public static void getNomeMes(final String mai) {
+  public static void getMonthName(final String may) {
     
-    String mes = "jan";
+    String month = "jan";
     
     final String mar = "mar";
-    String abr = "abr";
+    String apr = "apr";
     
-    switch (mes) {
-    case jan: // NÃO COMPILA - jan é um atributo comum, pode mudar em tempo de execução
-      System.out.println("Janeiro");
+    switch (month) {
+    case jan: // NOT COMPILING - jan is a common attribute, can change at runtime
+      System.out.println("January");
       break;
-    case FEV: // COMPILA - FEV é uma constante em tempo de compilação, seu valor nunca muda
-      System.out.println("Fevereiro");
+    case FEB: // COMPILES - FEB is a compilation time constant, its value never changes
+      System.out.println("February");
       break;
-    case mar: // COMPILA - mar é uma constante em tempo de compilação, seu valor nunca muda
-      System.out.println("Março");
+    case mar: // COMPILES - mar is a constant at compilation time, its value never changes
+      System.out.println("March");
       break;
-    case abr: // NÃO COMPILA - abr é uma variável comum, pode mudar em tempo de execução
-      System.out.println("Março");
+    case apr: // NOT COMPILING - apr is a common variable, can change at runtime
+      System.out.println("April");
       break;
-    case mai: // NÃO COMPILA - mai é final, mas não é constante, pode mudar em tempo de execução
-      System.out.println("Março");
+    case may: // NOT COMPILING - may is final but not constant, may change at runtime
+      System.out.println("May");
       break;
      }
   }

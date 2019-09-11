@@ -5,25 +5,25 @@ import java.io.IOException;
 public class StaticDefaultInInterfaces_Default {
 
   // tag::code[]
-  interface Corredor {
-    default String correr() {
-      return "Correndo";
+  interface Runner {
+    default String run() {
+      return "Running";
     }
   }
   
-  static class Pessoa implements Corredor {
+  static class Person implements Runner {
     
   }
   
-  static class Cavalo implements Corredor {
+  static class Horse implements Runner {
     @Override
-    public String correr() {
-      return "Galopando";
+    public String run() {
+      return "Galloping";
     }
     
     public static void main(String[] args) throws IOException {
-      System.out.println(new Pessoa().correr()); 
-      System.out.println(new Cavalo().correr());
+      System.out.println(new Person().run());
+      System.out.println(new Horse().run());
     }
   }
   // end::code[]

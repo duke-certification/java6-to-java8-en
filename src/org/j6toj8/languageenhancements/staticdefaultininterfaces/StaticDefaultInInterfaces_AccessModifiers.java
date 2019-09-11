@@ -5,21 +5,21 @@ import java.io.IOException;
 public class StaticDefaultInInterfaces_AccessModifiers {
 
   // tag::code[]
-  interface Corredor {
-    default String correr() { // COMPILA - não há modificador de acesso declarado, é automaticamente público
-      return "Correndo";
+  interface Runner {
+    default String run() { // COMPILES - there is no declared access modifier, it is automatically public
+      return "Running";
     }
-    public default String correrRapido() { // COMPILA - modificador de acesso público explícito
-      return "Correndo Rápido";
+    public default String runFast() { // COMPILES - explicit public access modifier
+      return "Running fast";
     }
-    protected default String correrDevagar() { // NÃO COMPILA - o método deve ser obrigatoriamente público
-      return "Correndo Devagar";
+    protected default String runSlow() { // NOT COMPILING - the method must be public
+      return "Running slow";
     }
-    private default String correrExtremo() { // NÃO COMPILA - o método deve ser obrigatoriamente público
-      return "Correndo ao Extremo";
+    private default String runExtreme() { // NOT COMPILING - the method must be public
+      return "Running to the extreme";
     }
     
-    private static double calculeVelocidade(int d, int t) { // NÃO COMPILA - o método deve ser obrigatoriamente público
+    private static double calculateSpeed(int d, int t) { // NOT COMPILING - the method must be public
       return d / t;
     }
   }

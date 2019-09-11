@@ -3,29 +3,29 @@ package org.j6toj8.languageenhancements.trywithresources;
 public class TryWithResouces_CloseException {
   
   // tag::code[]
-  static class Porta implements AutoCloseable {
+  static class Door implements AutoCloseable {
     @Override
-    public void close() throws Exception { // declara throws Exception obrigatoriamente 
+    public void close() throws Exception { // must declare throws Exception
       throw new Exception();
     }
   }
   
   void try1() {
-    try (Porta porta = new Porta()) { // NÃO COMPILA - exceção do close() não é capturada nem declarada
-      System.out.println("Olá 1");
+    try (Door door = new Door()) { // NOT COMPILING - the exception of close() is not captured or declared
+      System.out.println("Hello 1");
     }
   }
   
   void try2() {
-    try (Porta porta = new Porta()) {
-      System.out.println("Olá 2");
-    } catch (Exception e) { // COMPILA - exceção capturada
+    try (Door door = new Door()) {
+      System.out.println("Hello 2");
+    } catch (Exception e) { // COMPILES - exception caught
     }
   }
   
-  void try3() throws Exception { // COMPILA - exceção declarada no método
-    try (Porta porta = new Porta()) {
-      System.out.println("Olá 3");
+  void try3() throws Exception { // COMPILES - exception declared in the method
+    try (Door door = new Door()) {
+      System.out.println("Hello 3");
     }
   }
   // end::code[]

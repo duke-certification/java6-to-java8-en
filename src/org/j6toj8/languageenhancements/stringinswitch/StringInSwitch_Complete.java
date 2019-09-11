@@ -5,17 +5,17 @@ public class StringInSwitch_Complete {
   // tag::code[]
   public static void main(String[] args) {
     
-    String mes = "jan";
+    String month = "jan";
     
-    switch (mes) {
+    switch (month) {
     case "jan":
-      System.out.println("Janeiro");
+      System.out.println("January");
       break;
-    case "fev":
-      System.out.println("Fevereiro");
+    case "feb":
+      System.out.println("February");
       break;
     case "mar":
-      System.out.println("Março");
+      System.out.println("March");
       break;
     default:
       break;

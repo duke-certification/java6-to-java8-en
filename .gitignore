@@ -9,8 +9,8 @@ npm-debug.log
 *.DS_Store
 ._*
 
-### Nosso exemplos ###
-arquivo*.txt
+### Examples ###
+file*.txt
 
 ### Eclipse ###
 .settings/

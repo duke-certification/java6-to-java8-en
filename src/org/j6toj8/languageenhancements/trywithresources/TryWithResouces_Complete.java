@@ -11,35 +11,35 @@ public class TryWithResouces_Complete {
 
   // tag::code[]
   public static void main(String[] args) throws IOException {
-    // criação de 2 arquivos
-    File file = new File("arquivo.txt");
-    File file2 = new File("arquivo2.txt");
+    // creates 2 files
+    File file = new File("file.txt");
+    File file2 = new File("file2.txt");
     
-    // Exemplo try-with-resources com PrintWriter
+    // try-with-resources example with PrintWriter
     try (PrintWriter writer = new PrintWriter(file)) {
-      // escreve no arquivo.txt
-      writer.println("Olá Mundo!");
+      // write to file.txt
+      writer.println("Hello World!");
     }
     
-    // Exemplo try-with-resources com BufferedReader
+    // try-with-resources example with BufferedReader
     try (BufferedReader reader = Files.newBufferedReader(file.toPath())) {
-      // imprime no console uma linha do arquivo.txt
+      // print a line from file.txt to the console
       System.out.println(reader.readLine());
     }
     
-    // Exemplo try-with-resources com BufferedReader e BufferedWriter
+    // try-with-resources example with BufferedReader and BufferedWriter
     try (BufferedReader reader = Files.newBufferedReader(file.toPath());
        BufferedWriter writer = Files.newBufferedWriter(file2.toPath())) {
-      // lê a linha do arquivo.txt e escreve no arquivo2.txt
+      // read line from file.txt and write to file2.txt
       writer.write(reader.readLine() + "2");
     }
     
-    // Exemplo try-with-resources com BufferedReader
+    // try-with-resources example with BufferedReader
     try (BufferedReader reader = Files.newBufferedReader(file2.toPath())) {
-      // imprime no console uma linha do arquivo2.txt
+      // print a line from file2.txt to the console
       System.out.println(reader.readLine());
     }
-    // todos os Reader e Writer já foram fechados.
+    // all Reader and Writer have already been closed
   }
   // end::code[]
 }

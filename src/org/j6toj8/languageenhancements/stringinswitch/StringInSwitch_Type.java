@@ -5,14 +5,14 @@ public class StringInSwitch_Type {
   // tag::code[]
   public static void main(String[] args) {
     
-    Long mes = 1L;
+    Long month = 1L;
     
-    switch (mes) { // NÃO COMPILA - Long não é um tipo suportado
+    switch (month) { // NOT COMPILING - Long is not a supported type.
     case 1L:
-      System.out.println("Janeiro");
+      System.out.println("January");
       break;
     case 2L:
-      System.out.println("Fevereiro");
+      System.out.println("February");
       break;
     default:
       break;

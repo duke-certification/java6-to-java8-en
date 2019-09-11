@@ -8,9 +8,9 @@ public class MultipleException_RepeatException {
     try {
         throw new NullPointerException();
     } catch (NullPointerException | IllegalArgumentException e) {
-        System.out.println("Exceção capturada: " + e);
-    } catch (IllegalStateException | NullPointerException e) { // NÃO COMPILA - NullPointerException já foi capturada no catch anterior
-        System.out.println("Exceção capturada: " + e);
+        System.out.println("Exception caught: " + e);
+    } catch (IllegalStateException | NullPointerException e) { // NOT COMPILING - NullPointerException already caught in previous catch
+        System.out.println("Exception caught: " + e);
     }
   }
   // end::code[]

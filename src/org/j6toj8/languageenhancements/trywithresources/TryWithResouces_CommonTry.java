@@ -6,23 +6,23 @@ public class TryWithResouces_CommonTry {
   public static void main(String[] args) {
     try {
       System.out.println("try");
-    } // NÃO COMPILA - try "comum" sem catch ou finally
+    } // NOT COMPILING - "common" try without catch or finally
     
     try {
       System.out.println("try");
     } catch (Exception e) {
-    } // COMPILA - try "comum" só com catch
+    } // COMPILES - "common" try with catch only
     
     try {
       System.out.println("try");
     } finally {
-    } // COMPILA - try "comum" só com finally
+    } // COMPILES - "common" try with finally only
     
     try {
       System.out.println("try");
     } catch (Exception e) {
     } finally {
-    } // COMPILA - try "comum" com catch e finally
+    } // COMPILES - "common" try with catch and finally
   }
   // end::code[]
 }

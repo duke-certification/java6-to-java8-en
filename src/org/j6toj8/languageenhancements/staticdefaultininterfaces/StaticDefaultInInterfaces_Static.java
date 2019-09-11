@@ -5,16 +5,16 @@ import java.io.IOException;
 public class StaticDefaultInInterfaces_Static {
 
   // tag::code[]
-  interface Corredor {
-    static double calculeVelocidade(int distancia, int tempo) {
-      return distancia / tempo;
+  interface Runner {
+    static double calculateSpeed(int distance, int time) {
+      return distance / time;
     }
   }
   
-  static class Pessoa implements Corredor {
+  static class Person implements Runner {
     public static void main(String[] args) throws IOException {
-      System.out.println(Corredor.calculeVelocidade(100, 50)); // COMPILA - método static de uma interface sendo chamado como se fosse de uma classe comum 
-      System.out.println(Pessoa.calculeVelocidade(100, 50)); // NÃO COMPILA - o método static não é herdado, nem implementado, pela classe Pessoa
+      System.out.println(Runner.calculateSpeed(100, 50)); // COMPILES - static method of an interface being called as if it were from a common class
+      System.out.println(Person.calculateSpeed(100, 50)); // NOT COMPILING - the static method is not inherited or implemented by the Person class.
     }
   }
   // end::code[]

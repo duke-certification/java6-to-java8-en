@@ -3,23 +3,23 @@ package org.j6toj8.languageenhancements.staticdefaultininterfaces;
 public class StaticDefaultInInterfaces_InterfaceInheritance {
 
   // tag::code[]
-  interface Corredor {
-    default String correr() {
-      return "Correndo";
+  interface Runner {
+    default String run() {
+      return "Running";
     }
-    default String correrRapido() {
-      return "Correndo Rápido";
+    default String runFast() {
+      return "Running Fast";
     }
-    default String correrDevagar() {
-      return "Correndo Devagar";
+    default String runSlow() {
+      return "Running Slow";
     }
   }
   
-  interface Piloto extends Corredor {
-    String correrRapido();
+  interface Pilot extends Runner {
+    String runFast();
     
-    default String correrDevagar() {
-      return "Piloto Correndo Devagar";
+    default String runSlow() {
+      return "Pilot Running Slow";
     }
   }
   // end::code[]

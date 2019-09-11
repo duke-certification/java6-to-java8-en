@@ -4,20 +4,20 @@ public class StringInSwitch_Default {
 
   // tag::code[]
   public static void main(String[] args) {
-    
-    String mes = "jan";
-    
-    switch (mes) {
+
+    String month = "jan";
+
+    switch (month) {
     case "jan":
-      System.out.println("Janeiro");
+      System.out.println("January");
       break;
-    default: // COMPILA - O default pode estar em qualquer posição
+    default: // COMPILES - `Default` can be in any position
       break;
-    case "jan": // NÃO COMPILA - Já existe o case "jan"
-      System.out.println("Janeiro2");
+    case "jan": // NOT COMPILING - There is already case "jan"
+      System.out.println("January2");
       break;
     case "mar":
-      System.out.println("Março");
+      System.out.println("March");
       break;
     }
   }

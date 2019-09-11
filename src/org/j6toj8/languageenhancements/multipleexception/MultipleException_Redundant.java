@@ -9,8 +9,8 @@ public class MultipleException_Redundant {
     
     try {
         throw new NullPointerException();
-    } catch (RuntimeException | IllegalArgumentException e) { // NÃO COMPILA - IllegalArgumentException herda de RuntimeException, logo seria redundante
-        System.out.println("Exceção capturada: " + e);
+    } catch (RuntimeException | IllegalArgumentException e) { // NOT COMPILING - IllegalArgumentException inherits from RuntimeException, so would be redundant
+        System.out.println("Exception caught: " + e);
     }
   }
   // end::code[]
