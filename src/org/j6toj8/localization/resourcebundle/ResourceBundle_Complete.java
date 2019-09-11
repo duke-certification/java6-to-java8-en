@@ -11,7 +11,7 @@ public class ResourceBundle_Complete {
 
     Locale.setDefault(new Locale("en", "US"));
     
-    System.out.println("\n -- Locale padrão (en_US) -- ");
+    System.out.println("\n -- Default Locale (en_US) -- ");
     ResourceBundle bundleDefault = ResourceBundle.getBundle("Text");
     Set<String> keySetDefault = bundleDefault.keySet();
     for (String string : keySetDefault) {
