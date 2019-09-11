@@ -3,26 +3,26 @@ package org.j6toj8.languageenhancements.staticdefaultininterfaces;
 public class StaticDefaultInInterfaces_RepeatedDefault {
 
   // tag::code[]
-  interface Corredor {
-    default String correr() {
-      return "Correndo";
+  interface Runner {
+    default String run() {
+      return "Running";
     }
   }
   
-  interface Piloto {
-    default String correr() {
-      return "Piloto Correndo";
+  interface Pilot {
+    default String run() {
+      return "Pilot Running";
     }
   }
   
-  static class Pessoa implements Corredor, Piloto { // NÃO COMPILA - implementa duas interfaces com métodos repetidos e não sobrescreve
+  static class Person implements Runner, Pilot { // NOT COMPILING - implements two interfaces with repeated methods and does not overwrite
     
   }
   
-  static class Gigante implements Corredor, Piloto { // COMPILA - implementa duas interfaces com métodos repetidos, mas sobrescreve e cria sua própria implementação
+  static class Giant implements Runner, Pilot { // COMPILES - implements two interfaces with repeated methods, but overwrites and creates its own implementation
     @Override
-    public String correr() {
-      return "Gigante Correndo";
+    public String run() {
+      return "Giant Running";
     }
   }
   // end::code[]
