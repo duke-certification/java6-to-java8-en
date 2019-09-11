@@ -7,7 +7,7 @@ public class ZonedDateTime_Invalid {
 
   public static void main(String[] args) {
     // tag::code[]
-    System.out.println(ZonedDateTime.of(2019, 4, 31, 9, 20, 3, 1000, ZoneId.of("America/Sao_Paulo"))); // lança exceção: não existe 31 de abril
+    System.out.println(ZonedDateTime.of(2019, 4, 31, 9, 20, 3, 1000, ZoneId.of("America/Sao_Paulo"))); // throws exception: there is no April 31
     // end::code[]
   }
 }
