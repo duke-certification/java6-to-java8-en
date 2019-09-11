@@ -11,7 +11,7 @@ public class Locale_Complete {
     System.out.println(Locale.CANADA);
     System.out.println(Locale.UK);
     
-    System.out.println(" - Construtor - ");
+    System.out.println(" - Constructor - ");
     System.out.println(new Locale("pt", "BR"));
     System.out.println(new Locale("pt", "PT"));
     System.out.println(new Locale("ca", "ES", "VALENCIA"));

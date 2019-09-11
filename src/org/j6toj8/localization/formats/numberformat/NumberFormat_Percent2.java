@@ -11,7 +11,7 @@ public class NumberFormat_Percent2 {
     NumberFormat percentFormatPtBR = NumberFormat.getPercentInstance(new Locale("pt", "BR"));
     NumberFormat percentFormatEnUS = NumberFormat.getPercentInstance(new Locale("en", "US"));
 
-    // String para Percent
+    // String to Percent
     String s = "80,2%";
 
     try {
