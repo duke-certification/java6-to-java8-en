@@ -7,13 +7,13 @@ public class LambdaExpression_Shadowing {
 
   // tag::code[]
   public static void main(String[] args) {
-    Double x = 2.0; // variável 'x' no método
+    Double x = 2.0; // 'x' variable in method
 
-    // NÃO COMPILA - a variável com nome 'x' já existe e não pode ser declarada nas variáveis da expressão lambda
-    BinaryOperator<Double> elevarAoX = (Double y, Double x) -> Math.pow(y, x);
+    // NOT COMPILING - variable named 'x' already exists and cannot be declared in lambda expression variables
+    BinaryOperator<Double> raiseToX = (Double y, Double x) -> Math.pow(y, x);
     
-    // NÃO COMPILA - a variável com nome 'x' já existe e não pode ser declarada no corpo da expressão lambda
-    UnaryOperator<Double> elevarAoQuadrado = (Double y) -> {
+    // NOT COMPILING - variable named 'x' already exists and cannot be declared in lambda expression body
+    UnaryOperator<Double> square = (Double y) -> {
       Double x = 2.0;
       return Math.pow(y, x);
     };

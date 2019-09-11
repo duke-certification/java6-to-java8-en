@@ -4,27 +4,27 @@ public class LambdaExpression_FunctionalInterface {
 
   // tag::code[]
   @FunctionalInterface
-  interface Executavel { // interface funcional
-    String execute(); // método funcional
+  interface Executable { // functional interface
+    String execute(); // functional method
   }
 
-  private static void executeEApresenteMensagem(Executavel executavel) {
-    String mensagem = executavel.execute();
-    System.out.println(mensagem);
+  private static void executeAndPresentMessage(Executable executable) {
+    String message = executable.execute();
+    System.out.println(message);
   }
 
   public static void main(String[] args) {
 
-    // com classe anônima
-    executeEApresenteMensagem(new Executavel() {
+    // with anonymous class
+    executeAndPresentMessage(new Executable() {
       @Override
       public String execute() {
-        return "executei com classe anônima";
+        return "performed with anonymous class";
       }
     });
 
-    // com expressão lambda
-    executeEApresenteMensagem(() -> { return "executei com expressão lambda"; });
+    // with lambda expression
+    executeAndPresentMessage(() -> { return "performed with lambda expression"; });
   }
   // end::code[]
 }

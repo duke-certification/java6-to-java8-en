@@ -6,10 +6,10 @@ public class LambdaExpression_SimpleComplete {
 
   public static void main(String[] args) {
     // tag::code[]
-    // expressão lambda completa
-    UnaryOperator<Double> elevarAoQuadrado1 = (Double x) -> { return Math.pow(x, 2); };
-    // expressão lambda simplificada
-    UnaryOperator<Double> elevarAoQuadrado2 = (x) -> Math.pow(x, 2);
+    // complete lambda expression
+    UnaryOperator<Double> square1 = (Double x) -> { return Math.pow(x, 2); };
+    // simplified lambda expression
+    UnaryOperator<Double> square2 = (x) -> Math.pow(x, 2);
     // end::code[]
   }
 }

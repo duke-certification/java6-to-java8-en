@@ -7,12 +7,12 @@ public class LambdaExpression_Block {
 
   public static void main(String[] args) {
     // tag::code[]
-    UnaryOperator<Double> elevarAoQuadrado = (Double x) -> {
+    UnaryOperator<Double> square = (Double x) -> {
       double pow = Math.pow(x, 2);
       return pow;
     };
 
-    Consumer<Double> imprime = (Double x) -> {
+    Consumer<Double> print = (Double x) -> {
       double pow = Math.pow(x, 2);
       System.out.println(pow);
     };
