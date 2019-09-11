@@ -8,14 +8,14 @@ public class TryWithResouces_Java6 {
 
   // tag::code[]
   public static void main(String[] args) throws FileNotFoundException {
-    File file = new File("arquivo.txt");
+    File file = new File("file.txt");
     PrintWriter writer = null;
     try {
       writer = new PrintWriter(file);
-      writer.println("Olá Mundo!");
+      writer.println("Hello World!");
     } finally {
       if (writer != null) {
-        writer.close(); // fechando o writer manualmente
+        writer.close(); // closing the writer manually
       }
     }
   }

@@ -3,11 +3,11 @@ package org.j6toj8.languageenhancements.trywithresources;
 public class TryWithResouces_NoAutoCloseable {
   
   // tag::code[]
-  static class Prateleira {}
+  static class Shelf {}
   
   public static void main(String[] args) {
-    try (Prateleira prateleira = new Prateleira()) { // NÃO COMPILA - Prateleira não implementa AutoClosable
-      System.out.println("Olá");
+    try (Shelf shelf = new Shelf()) { // NOT COMPILING - Shelf do not implement AutoCloseable
+      System.out.println("Hello");
     }
   }
   // end::code[]
