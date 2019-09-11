@@ -8,9 +8,9 @@ public class MultipleException_OverrideVar {
     try {
         throw new NullPointerException();
     } catch (NullPointerException | IllegalArgumentException e) {
-        e = new IllegalStateException(); // NÃO COMPILA - a variável não pode ser sobrescrita quando está em um multi-catch
+        e = new IllegalStateException(); // NOT COMPILING - variable cannot be overwritten when multi-catching
     } catch (Exception e) {
-        e = new IllegalStateException(); // COMPILA - ainda é possível sobrescrever a variável quando não é um multi-catch
+        e = new IllegalStateException(); // COMPILES - it is still possible to overwrite the variable when it is not a multi-catch
     }
   }
   // end::code[]

@@ -9,8 +9,8 @@ public class MultipleException_CheckedException {
     
     try {
         throw new NullPointerException();
-    } catch (NullPointerException | IOException e) { // NÃO COMPILA - IOException não é lançada dentro do bloco try
-        System.out.println("Exceção capturada: " + e);
+    } catch (NullPointerException | IOException e) { // NOT COMPILING - IOException is not thrown inside try block
+        System.out.println("Exception caught: " + e);
     }
   }
   // end::code[]
