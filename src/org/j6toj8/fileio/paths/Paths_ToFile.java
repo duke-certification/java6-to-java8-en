@@ -11,7 +11,7 @@ public class Paths_ToFile {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome);
 
-    Path path = Paths.get(userHome, "arquivoQueNaoExiste.txt");
+    Path path = Paths.get(userHome, "fileThatDoesNotExist.txt");
     System.out.println("Path: " + path);
     
     File file = path.toFile();

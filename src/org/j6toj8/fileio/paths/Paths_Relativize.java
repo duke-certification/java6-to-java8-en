@@ -12,32 +12,32 @@ public class Paths_Relativize {
 
     System.out.println();
     
-    Path pathAbsoluto1 = Paths.get(userHome, "arquivos");
-    Path pathAbsoluto2 = Paths.get(userHome, "arquivos/arquivo1.txt");
-    System.out.println("Absoluto 1: " + pathAbsoluto1);
-    System.out.println("Absoluto 2: " + pathAbsoluto2);
+    Path pathAbsolute1 = Paths.get(userHome, "files");
+    Path pathAbsolute2 = Paths.get(userHome, "files/file1.txt");
+    System.out.println("Absolute 1: " + pathAbsolute1);
+    System.out.println("Absolute 2: " + pathAbsolute2);
     
-    Path pathRelativo1 = Paths.get("arquivo1.txt");
-    Path pathRelativo2 = Paths.get("arquivos/arquivo1.txt");
-    System.out.println("Relativo 1: " + pathRelativo1);
-    System.out.println("Relativo 2: " + pathRelativo2);
+    Path pathRelative1 = Paths.get("file1.txt");
+    Path pathRelative2 = Paths.get("files/file1.txt");
+    System.out.println("Relative 1: " + pathRelative1);
+    System.out.println("Relative 2: " + pathRelative2);
     
-    System.out.println("Absoluto 1 + Absoluto 2: " + pathAbsoluto1.relativize(pathAbsoluto2));
-    System.out.println("Absoluto 2 + Absoluto 1: " + pathAbsoluto2.relativize(pathAbsoluto1));
+    System.out.println("Absolute 1 + Absolute 2: " + pathAbsolute1.relativize(pathAbsolute2));
+    System.out.println("Absolute 2 + Absolute 1: " + pathAbsolute2.relativize(pathAbsolute1));
     
-    System.out.println("Relativo 1 + Relativo 2: " + pathRelativo1.relativize(pathRelativo2));
-    System.out.println("Relativo 2 + Relativo 1: " + pathRelativo2.relativize(pathRelativo1));
+    System.out.println("Relative 1 + Relative 2: " + pathRelative1.relativize(pathRelative2));
+    System.out.println("Relative 2 + Relative 1: " + pathRelative2.relativize(pathRelative1));
     
     try {
-      // Exceção será lançada, pois não é possível chamar relativize em tipos diferente de Path
-      System.out.println("Absoluto + Relativo: " + pathAbsoluto1.relativize(pathRelativo1));
+      // Exception will be thrown as it is not possible to call relativize on types other than Path
+      System.out.println("Absolute + Relative: " + pathAbsolute1.relativize(pathRelative1));
     } catch (Exception e) {
       e.printStackTrace();
     }
     
     try {
-      // Exceção será lançada, pois não é possível chamar relativize em tipos diferente de Path      
-      System.out.println("Relativo + Absoluto: " + pathRelativo1.relativize(pathAbsoluto1));
+      // Exception will be thrown as it is not possible to call relativize on types other than Path
+      System.out.println("Relative + Absolute: " + pathRelative1.relativize(pathAbsolute1));
     } catch (Exception e) {
       e.printStackTrace();
     }

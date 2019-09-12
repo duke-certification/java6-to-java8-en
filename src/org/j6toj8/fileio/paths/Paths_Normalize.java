@@ -12,13 +12,13 @@ public class Paths_Normalize {
 
     System.out.println();
     
-    Path path1 = Paths.get(userHome, "arquivos/./arquivo1.txt");
+    Path path1 = Paths.get(userHome, "files/./file1.txt");
     System.out.println("Path: " + path1);
     System.out.println("Path normalize: " + path1.normalize());
     
     System.out.println();
     
-    Path path2 = Paths.get(userHome, "arquivos/../arquivo1.txt");
+    Path path2 = Paths.get(userHome, "files/../file1.txt");
     System.out.println("Path: " + path2);
     System.out.println("Path normalize: " + path2.normalize());
     
