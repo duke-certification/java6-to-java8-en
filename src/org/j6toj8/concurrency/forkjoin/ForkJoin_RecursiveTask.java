@@ -4,79 +4,78 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;
-import java.util.concurrent.RecursiveAction;
 import java.util.concurrent.RecursiveTask;
 
 public class ForkJoin_RecursiveTask {
 
   // tag::code[]
-  // Classe que representa a tarefa que será executada
-  static class ImpressaoDeStrings extends RecursiveTask<Integer> {
+  // Class that represents the task that will be performed
+  static class StringPrinter extends RecursiveTask<Integer> {
 
-    private String stringParaImprimir; // String que será impressa
+    private String stringToPrint;
 
-    public ImpressaoDeStrings(String stringParaImprimir) {
-      this.stringParaImprimir = stringParaImprimir;
+    public StringPrinter(String stringToPrint) {
+      this.stringToPrint = stringToPrint;
     }
 
     @Override
     protected Integer compute() {
-      if (stringParaImprimir.length() < 10) {
-        // se a String tiver menos de 10 caracteres, será impressa
-        System.out.println(Thread.currentThread().getName() + " - " + stringParaImprimir);
-        
-        // retornamos a quantidade de caracteres impressos
-        return stringParaImprimir.length();
-      } else {
-        // caso contrário, são criadas duas novas tarefas, uma com a primeira metade da String
-        // e outra com a segunda metade da String
-        List<ImpressaoDeStrings> novasTarefas = divideEmDuasTarefas();
-        ImpressaoDeStrings tarefa1 = novasTarefas.get(0);
-        ImpressaoDeStrings tarefa2 = novasTarefas.get(1);
-        
-        // 'fork' irá enviar a tarefa1 para ser executada em uma nova thread
-        ForkJoinTask<Integer> primeiraTarefa = tarefa1.fork();
-        
-        // 'compute' irá executar a tarefa2 nessa mesma thread
-        Integer resultadoDaTarefa2 = tarefa2.compute();
+      if (stringToPrint.length() < 10) {
+        // if String is less than 10 characters, will print
+        System.out.println(Thread.currentThread().getName() + " - " + stringToPrint);
 
-        // 'join' irá pegar o resultado da tafera1 que estava sendo executada em outra thread
-        Integer resultadoDaTarefa1 = primeiraTarefa.join();
-        
-        // retornamos a soma dos resultados, pois é a quantidade de carateres impressos
-        return resultadoDaTarefa2 + resultadoDaTarefa1;
+        // return the amount of characters printed
+        return stringToPrint.length();
+      } else {
+        // otherwise, two new tasks are created, one with the first half of String and one with the second half of String
+        List<StringPrinter> newTasks = divideInTwoTasks();
+        StringPrinter task1 = newTasks.get(0);
+        StringPrinter task2 = newTasks.get(1);
+
+        // 'fork' will send task1 to run on a new thread
+        ForkJoinTask<Integer> firstTask = task1.fork();
+
+        // 'compute' will execute task2 on this same thread
+        Integer taskResult2 = task2.compute();
+
+        // 'join' will get the result of task1 that was running on another thread
+        Integer taskResult1 = firstTask.join();
+
+        // return the sum of the results because it is the number of characters printed
+        return taskResult2 + taskResult1;
       }
     }
 
-    private List<ImpressaoDeStrings> divideEmDuasTarefas() {
-      // esse método divide a String em duas partes e cria duas novas tarefas
-      // cada uma das tarefas recebe uma parte da String
-      
-      int tamanhoDaString = stringParaImprimir.length();
-      int meioDaString = tamanhoDaString / 2;
-      
-      String primeiraMetade = stringParaImprimir.substring(0, meioDaString);
-      String segundaMetade = stringParaImprimir.substring(meioDaString);
-      
-      List<ImpressaoDeStrings> acoes = new ArrayList<ImpressaoDeStrings>();
-      acoes.add(new ImpressaoDeStrings(primeiraMetade));
-      acoes.add(new ImpressaoDeStrings(segundaMetade));
-      return acoes;
+    private List<StringPrinter> divideInTwoTasks() {
+      // this method splits the string into two parts and creates two new tasks
+      // each task gets a part of the String
+
+      int stringSize = stringToPrint.length();
+      int stringMiddle = stringSize / 2;
+
+      String firstHalf = stringToPrint.substring(0, stringMiddle);
+      String secondHalf = stringToPrint.substring(stringMiddle);
+
+      List<StringPrinter> actions = new ArrayList<StringPrinter>();
+      actions.add(new StringPrinter(firstHalf));
+      actions.add(new StringPrinter(secondHalf));
+      return actions;
     }
     
   }
   
   public static void main(String[] args) {
-    // string que queremos imprimir
-    String stringParaImprimir = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    
-    // tarefa principal que será executada
-    ImpressaoDeStrings tarefa = new ImpressaoDeStrings(stringParaImprimir);
-    
-    // criação do ForkJoinPool e execução da tarefa
+    // string we want to print
+    String stringToPrint= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    // main task to be performed
+    StringPrinter task = new StringPrinter(stringToPrint);
+
+    // ForkJoinPool creation and task execution
     ForkJoinPool forkJoinPool = new ForkJoinPool();
-    Integer resultado = forkJoinPool.invoke(tarefa);
-    System.out.println("Resultado da execução: " + resultado);
+    Integer result = forkJoinPool.invoke(task);
+    System.out.println("Execution result: " + result);
+
   }
   // end::code[]
   

@@ -9,58 +9,57 @@ import java.util.concurrent.RecursiveAction;
 public class ForkJoin_RecursiveAction {
 
   // tag::code[]
-  // Classe que representa a tarefa que será executada
-  static class ImpressaoDeStrings extends RecursiveAction {
+  // Class that represents the task that will be performed
+  static class StringPrinterAction extends RecursiveAction {
 
-    private String stringParaImprimir; // String que será impressa
+    private String stringToPrint;
 
-    public ImpressaoDeStrings(String stringParaImprimir) {
-      this.stringParaImprimir = stringParaImprimir;
+    public StringPrinterAction(String stringToPrint) {
+      this.stringToPrint = stringToPrint;
     }
 
     @Override
     protected void compute() {
-      if (stringParaImprimir.length() < 10) {
-        // se a String tiver menos de 10 caracteres, será impressa
-        System.out.println(Thread.currentThread().getName() + " - " + stringParaImprimir);
+      if (stringToPrint.length() < 10) {
+        // if String is less than 10 characters, will print
+        System.out.println(Thread.currentThread().getName() + " - " + stringToPrint);
       } else {
-        // caso contrário, são criadas duas novas tarefas, uma com a primeira metade da String
-        // e outra com a segunda metade da String
-        List<ImpressaoDeStrings> novasTarefas = divideEmDuasTarefas();
-        
-        // Invoca a execução das duas tarefas criadas
-        ForkJoinTask.invokeAll(novasTarefas);
+        // otherwise, two new tasks are created, one with the first half of String and one with the second half of String
+        List<StringPrinterAction> newTasks = divideInTwoTasks();
+
+        // Invoke execution of two created tasks
+        ForkJoinTask.invokeAll(newTasks);
       }
     }
 
-    private List<ImpressaoDeStrings> divideEmDuasTarefas() {
-      // esse método divide a String em duas partes e cria duas novas tarefas
-      // cada uma das tarefas recebe uma parte da String
+    private List<StringPrinterAction> divideInTwoTasks() {
+      // this method splits the string into two parts and creates two new tasks
+      // each task gets a part of the String
       
-      int tamanhoDaString = stringParaImprimir.length();
-      int meioDaString = tamanhoDaString / 2;
+      int stringSize = stringToPrint.length();
+      int stringMiddle = stringSize / 2;
       
-      String primeiraMetade = stringParaImprimir.substring(0, meioDaString);
-      String segundaMetade = stringParaImprimir.substring(meioDaString);
+      String firstHalf = stringToPrint.substring(0, stringMiddle);
+      String secondHalf = stringToPrint.substring(stringMiddle);
       
-      List<ImpressaoDeStrings> acoes = new ArrayList<ImpressaoDeStrings>();
-      acoes.add(new ImpressaoDeStrings(primeiraMetade));
-      acoes.add(new ImpressaoDeStrings(segundaMetade));
-      return acoes;
+      List<StringPrinterAction> actions = new ArrayList<StringPrinterAction>();
+      actions.add(new StringPrinterAction(firstHalf));
+      actions.add(new StringPrinterAction(secondHalf));
+      return actions;
     }
     
   }
   
   public static void main(String[] args) {
-    // string que queremos imprimir
-    String stringParaImprimir = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    
-    // tarefa principal que será executada
-    ImpressaoDeStrings tarefa = new ImpressaoDeStrings(stringParaImprimir);
-    
-    // criação do ForkJoinPool e execução da tarefa
+    // string we want to print
+    String stringToPrint= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    // main task to be performed
+    StringPrinterAction task = new StringPrinterAction(stringToPrint);
+
+    // ForkJoinPool creation and task execution
     ForkJoinPool forkJoinPool = new ForkJoinPool();
-    forkJoinPool.invoke(tarefa);
+    forkJoinPool.invoke(task);
   }
   // end::code[]
   
