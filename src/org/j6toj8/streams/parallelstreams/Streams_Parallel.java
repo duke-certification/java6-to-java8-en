@@ -8,7 +8,7 @@ public class Streams_Parallel {
     // tag::code[]
     String[] array = new String[] { "A", "B", "C" };
     Arrays.stream(array)
-      .parallel() // stream transformado em paralelo
+      .parallel() // stream transformed in parallel
       .forEach(System.out::println); 
     // end::code[]
   }

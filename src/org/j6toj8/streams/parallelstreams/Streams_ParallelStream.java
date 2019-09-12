@@ -8,7 +8,7 @@ public class Streams_ParallelStream {
   public static void main(String[] args) {
     // tag::code[]
     List<String> list = Arrays.asList("A", "B", "C");
-    list.parallelStream() // cria um Stream paralelo diretamente
+    list.parallelStream() // create a parallel stream directly
       .forEach(System.out::println); 
     // end::code[]
   }

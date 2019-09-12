@@ -9,12 +9,12 @@ public class Streams_ParallelForEach {
     // tag::code[]
     List<String> list = Arrays.asList("A", "B", "C");
 
-    System.out.println("Sequencial: ");
-    list.stream() // cria um Stream sequencial
+    System.out.println("Sequential: ");
+    list.stream() // create a sequential stream
         .forEach(System.out::println);
 
-    System.out.println("Paralelo: ");
-    list.parallelStream() // cria um Stream paralelo
+    System.out.println("Parallel: ");
+    list.parallelStream() // create a parallel stream
         .forEach(System.out::println);
     // end::code[]
   }
