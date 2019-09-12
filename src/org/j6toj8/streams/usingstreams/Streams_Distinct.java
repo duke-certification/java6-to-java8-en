@@ -6,11 +6,11 @@ public class Streams_Distinct {
 
   public static void main(String[] args) {
     // tag::code[]
-    // Criação de um array comum de Strings
+    // Create a common string array
     String[] array = new String[] { "A", "B", "C", "A", "B", "F" };
     
     Arrays.stream(array)
-        .distinct() // ignora elementos repetidos
+        .distinct() // ignore repeated elements
         .forEach(System.out::println);
     // end::code[]
   }

@@ -6,12 +6,12 @@ public class Streams_Pipeline {
 
   public static void main(String[] args) {
     // tag::code[]
-    IntStream.range(0, 10) // Stream de 0 a 9
-        .filter(e -> e % 2 == 0) // mantém apenas números pares
-        .skip(2) // ignora os dois primeiros
-        .limit(2) // limita a 3 elementos
-        .map(e -> e * 2) // multipla cada elemento por 2
-        .forEach(System.out::println); // imprime cada elemento
+    IntStream.range(0, 10) // 0 to 9 Stream
+        .filter(e -> e % 2 == 0) // keep only even numbers
+        .skip(2) // ignore the first two
+        .limit(2) // limited to 3 elements
+        .map(e -> e * 2) // multiply each element by 2
+        .forEach(System.out::println); // print each element
     // end::code[]
   }
 }

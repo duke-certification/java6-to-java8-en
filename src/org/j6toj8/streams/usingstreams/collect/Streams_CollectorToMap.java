@@ -8,9 +8,9 @@ public class Streams_CollectorToMap {
 
   public static void main(String[] args) {
     // tag::code[]
-    // Armazena o resultado do Stream em um Mapa
-    // A Chave é o próprio nome (s -> s)
-    // O Valor é o tamanho do nome
+    // Store the result of the stream in a map
+    // The key is its own name (s -> s)
+    // Value is the name length
     Map<String, Integer> collect = Stream.of("Rinaldo", "Rodrigo", "Luiz", "Amélia", "Roseany")
       .collect(Collectors.toMap(s -> s, s -> s.length()));
     

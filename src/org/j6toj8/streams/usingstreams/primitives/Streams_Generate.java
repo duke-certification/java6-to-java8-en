@@ -8,13 +8,13 @@ public class Streams_Generate {
 
   public static void main(String[] args) {
     // tag::code[]
-    // Cria Stream infinito de números aleatórios
-    System.out.println(" IntStream infinito de números aleatórios");
+    // Create infinite stream of random numbers
+    System.out.println(" infinity IntStream of random numbers");
     IntStream.generate(() -> new Random().nextInt())
       .limit(3)
       .forEach(System.out::println);
     
-    System.out.println("\n DoubleStream infinito de números aleatórios");
+    System.out.println("\n infinity DoubleStream of random numbers");
     DoubleStream.generate(Math::random)
       .limit(3)
       .forEach(System.out::println);

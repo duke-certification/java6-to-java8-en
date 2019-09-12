@@ -7,7 +7,7 @@ public class Streams_CollectorAveragingInt {
 
   public static void main(String[] args) {
     // tag::code[]
-    // Calcula a média do tamanho de cada nome
+    // Calculate the average length of each name
     Double collect = Stream.of("Rinaldo", "Rodrigo", "Luiz", "Amélia", "Roseany")
       .collect(Collectors.averagingInt(s -> s.length()));
     

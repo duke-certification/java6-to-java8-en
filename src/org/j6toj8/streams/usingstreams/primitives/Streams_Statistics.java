@@ -8,11 +8,11 @@ public class Streams_Statistics {
   public static void main(String[] args) {
     // tag::code[]
     IntSummaryStatistics summaryStatistics = IntStream.range(0, 10).summaryStatistics();
-    System.out.println("Quantidade: " + summaryStatistics.getCount());
-    System.out.println("Maior: " + summaryStatistics.getMax());
-    System.out.println("Menor: " + summaryStatistics.getMin());
-    System.out.println("Soma: " + summaryStatistics.getSum());
-    System.out.println("Média: " + summaryStatistics.getAverage());
+    System.out.println("Count: " + summaryStatistics.getCount());
+    System.out.println("Max: " + summaryStatistics.getMax());
+    System.out.println("Min: " + summaryStatistics.getMin());
+    System.out.println("Sum: " + summaryStatistics.getSum());
+    System.out.println("Average: " + summaryStatistics.getAverage());
     // end::code[]
   }
 }
