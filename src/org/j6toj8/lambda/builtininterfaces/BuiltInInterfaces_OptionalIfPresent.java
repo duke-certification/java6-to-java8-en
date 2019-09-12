@@ -6,13 +6,13 @@ public class BuiltInInterfaces_OptionalIfPresent {
 
   // tag::code[]
   public static void main(String[] args) {
-    Optional<String> optionalVazio = Optional.empty();
-    Optional<String> optionalComValor = Optional.of("valor");
+    Optional<String> emptyOptional = Optional.empty();
+    Optional<String> optionalWithValue = Optional.of("value");
     
-    // A linha abaixo não irá imprimir nada, pois o optional está vazio
-    optionalVazio.ifPresent(valor -> System.out.println("Vazio: " + valor));
-    // A linha abaixo irá imprimir, pois o optional possui valor
-    optionalComValor.ifPresent(valor -> System.out.println("Com Valor: " + valor ));
+    // The line below will not print anything as optional is empty
+    emptyOptional.ifPresent(value -> System.out.println("Empty: " + value));
+    // The line below will print, as optional has value
+    optionalWithValue.ifPresent(value -> System.out.println("With Value: " + value ));
   }
   // end::code[]
   

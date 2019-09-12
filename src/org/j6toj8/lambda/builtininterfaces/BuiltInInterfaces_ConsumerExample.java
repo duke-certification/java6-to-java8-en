@@ -9,11 +9,11 @@ public class BuiltInInterfaces_ConsumerExample {
 
   // tag::code[]
   public static void main(String[] args) {
-    Consumer<Object> impressor = x -> System.out.println(x);
-    impressor.accept(LocalDate.now()); // imprimirá a data atual
+    Consumer<Object> printer = x -> System.out.println(x);
+    printer.accept(LocalDate.now()); // will print the current date
     
-    BiConsumer<Object, Object> impressor2 = (x, y) -> { System.out.println(x); System.out.println(y); };
-    impressor2.accept(LocalDate.now(), LocalTime.now()); // imprimirá a data atual e depois a hora atual
+    BiConsumer<Object, Object> printer2 = (x, y) -> { System.out.println(x); System.out.println(y); };
+    printer2.accept(LocalDate.now(), LocalTime.now()); // will print the current date and then the current time
   }
   // end::code[]
   

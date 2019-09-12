@@ -7,11 +7,11 @@ public class BuiltInInterfaces_OperatorPrimitive {
 
   // tag::code[]
   public static void main(String[] args) {
-    IntUnaryOperator somaDois = x -> x + 2;
-    System.out.println(somaDois.applyAsInt(7)); // soma 7 + 2
+    IntUnaryOperator sumTwo = x -> x + 2;
+    System.out.println(sumTwo.applyAsInt(7)); // sum 7 + 2
 
-    IntBinaryOperator somaNumeros = (x, y) -> x + y;
-    System.out.println(somaNumeros.applyAsInt(1, 5)); // soma 1 + 5
+    IntBinaryOperator sumNumbers = (x, y) -> x + y;
+    System.out.println(sumNumbers.applyAsInt(1, 5)); // sum 1 + 5
   }
   // end::code[]
 

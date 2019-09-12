@@ -7,8 +7,8 @@ public class BuiltInInterfaces_PredicatePrimitive {
 
   // tag::code[]
   public static void main(String[] args) {
-    IntPredicate dado = x -> x == new Random().nextInt(7);
-    System.out.println(dado.test(1)); // testa se o número gerado é igual a 1
+    IntPredicate dice = x -> x == new Random().nextInt(7);
+    System.out.println(dice.test(1)); // tests if the generated number is equal to 1
   }
   // end::code[]
 

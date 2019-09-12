@@ -8,7 +8,7 @@ public class BuiltInInterfaces_SupplierPrimitive {
   // tag::code[]
   public static void main(String[] args) {
     IntSupplier randomIntSupplier = () -> new Random().nextInt();
-    System.out.println(randomIntSupplier.getAsInt()); // getAsInt retorna um int primitivo
+    System.out.println(randomIntSupplier.getAsInt()); // getAsInt returns a primitive int
   }
   // end::code[]
   
