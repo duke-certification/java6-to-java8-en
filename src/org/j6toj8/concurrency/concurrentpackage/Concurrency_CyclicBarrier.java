@@ -6,47 +6,47 @@ import java.util.concurrent.CyclicBarrier;
 public class Concurrency_CyclicBarrier {
 
   // tag::code[]
-  // Classe que será executada por 3 threads
-  static class Acao implements Runnable {
+  // Class that will be executed by 3 threads
+  static class Action implements Runnable {
 
     CyclicBarrier cyclicBarrier;
 
-    public Acao(CyclicBarrier cyclicBarrier) {
+    public Action(CyclicBarrier cyclicBarrier) {
       this.cyclicBarrier = cyclicBarrier;
     }
 
     @Override
     public void run() {
-      System.out.println(Thread.currentThread().getName() + ": Primeira Parte");
+      System.out.println(Thread.currentThread().getName() + ": First Part");
       
       try {
-        cyclicBarrier.await(); // sincronização das threads
+        cyclicBarrier.await(); // thread synchronization
       } catch (InterruptedException | BrokenBarrierException e) {
         e.printStackTrace();
       }
       
-      System.out.println(Thread.currentThread().getName() + ": Segunda Parte");
+      System.out.println(Thread.currentThread().getName() + ": Second Part");
       
       try {
-        cyclicBarrier.await(); // sincronização das threads
+        cyclicBarrier.await(); // thread synchronization
       } catch (InterruptedException | BrokenBarrierException e) {
         e.printStackTrace();
       }
       
-      System.out.println(Thread.currentThread().getName() + ": Terceira Parte");
+      System.out.println(Thread.currentThread().getName() + ": Third Part");
     }
   }  
   
   public static void main(String[] args) {
-    // Criação de um CyclicBarrier para 3 threads
+    // Creating a CyclicBarrier for 3 threads
     CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
     
-    // Criação das threads
-    Thread thread1 = new Thread(new Acao(cyclicBarrier));
-    Thread thread2 = new Thread(new Acao(cyclicBarrier));
-    Thread thread3 = new Thread(new Acao(cyclicBarrier));
+    // Thread Creation
+    Thread thread1 = new Thread(new Action(cyclicBarrier));
+    Thread thread2 = new Thread(new Action(cyclicBarrier));
+    Thread thread3 = new Thread(new Action(cyclicBarrier));
     
-    // Início de execução das threads
+    // Threads start running
     thread1.start();
     thread2.start();
     thread3.start();

@@ -14,14 +14,14 @@ public class Concurrency_LinkedBlockingDeque {
       queue.offerFirst("ABC", 1, TimeUnit.SECONDS);
       queue.offerLast("DEF", 1, TimeUnit.SECONDS);
     } catch (InterruptedException e) {
-      System.out.println("Não conseguiu inserir em menos de 1 segundo.");
+      System.out.println("Failed to insert in less than 1 second.");
     }
     
     try {
       queue.pollFirst(1, TimeUnit.SECONDS);
       queue.pollLast(1, TimeUnit.SECONDS);
     } catch (InterruptedException e) {
-      System.out.println("Não conseguiu remover em menos de 1 segundo.");
+      System.out.println("Failed to remove in less than 1 second.");
     }    
     // end::code[]
   }
