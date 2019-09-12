@@ -7,12 +7,12 @@ public class Locks_Fair {
 
   public static void main(String[] args) {
     // tag::code[]
-    Lock lock = new ReentrantLock(true); // lock "justo"
+    Lock lock = new ReentrantLock(true); // "fair" lock
     try {
       lock.lock();
       System.out.println("ABC");
     } finally {
-      lock.unlock(); // desfaz o lock
+      lock.unlock(); // undo the lock
     }
     // end::code[]
   }

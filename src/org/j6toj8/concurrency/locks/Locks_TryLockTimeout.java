@@ -10,19 +10,19 @@ public class Locks_TryLockTimeout {
     // tag::code[]
     Lock lock = new ReentrantLock();
     
-    boolean temLock = false;
+    boolean hasLock = false;
     try {
-      // tenta obter o lock por no máximo 1 segundo
-      temLock = lock.tryLock(1, TimeUnit.SECONDS);
+      // try to lock for a maximum of 1 second
+      hasLock = lock.tryLock(1, TimeUnit.SECONDS);
     } catch (InterruptedException e) {
-      System.out.println("Não obteve o Lock");
+      System.out.println("Didn't get the lock");
     }
     
-    if (temLock) {
+    if (hasLock) {
       try {
         System.out.println("ABC");
       } finally {
-        lock.unlock(); // desfaz o lock
+        lock.unlock(); // undo the lock
       }
     } else {
       System.out.println("DEF");

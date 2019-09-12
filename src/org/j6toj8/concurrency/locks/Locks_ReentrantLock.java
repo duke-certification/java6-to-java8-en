@@ -9,10 +9,10 @@ public class Locks_ReentrantLock {
     // tag::code[]
     Lock lock = new ReentrantLock();
     try {
-      lock.lock(); // apenas uma thread obtém o lock por vez
+      lock.lock(); // only one thread gets lock at a time
       System.out.println("ABC");
     } finally {
-      lock.unlock(); // desfaz o lock
+      lock.unlock(); // undo the lock
     }
     // end::code[]
   }
