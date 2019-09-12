@@ -11,16 +11,16 @@ public class Tasks_SingleThreadFuture {
     ExecutorService executor = null;
     try {
       executor = Executors.newSingleThreadExecutor();
-      Future<?> tarefa = executor.submit(() -> System.out.println("Tarefa executando"));
+      Future<?> task = executor.submit(() -> System.out.println("Task running"));
 
-      // verifica se a tarefa está finalizada
-      System.out.println("Tarefa já finalizada? " + tarefa.isDone());
-      
-      // tenta cancelar a tarefa
-      System.out.println("Tentando cancelar a tarefa. Conseguiu? " + tarefa.cancel(true));
-      
-      // verifica se a tarefa foi cancelada
-      System.out.println("Tarefa foi cancelada? " + tarefa.isCancelled());
+      // check if the task is finished
+      System.out.println("Task already completed? " + task.isDone());
+
+      // try to cancel the task
+      System.out.println("Trying to cancel the task. Got it? " + task.cancel(true));
+
+      // check if the task has been canceled
+      System.out.println("Task was canceled? " + task.isCancelled());
     } finally {
       if (executor != null) {
         executor.shutdown();

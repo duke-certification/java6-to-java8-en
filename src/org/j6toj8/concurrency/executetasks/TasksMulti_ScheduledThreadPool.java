@@ -11,14 +11,14 @@ public class TasksMulti_ScheduledThreadPool {
     // tag::code[]
     ScheduledExecutorService executor = null;
     try {
-      executor = Executors.newScheduledThreadPool(2); // executor de agendamento com duas threads
-      System.out.println("Agora: " + LocalTime.now()); // imprime a hora atual
+      executor = Executors.newScheduledThreadPool(2); // two thread scheduling executor
+      System.out.println("Now: " + LocalTime.now()); // print the current time
       
-      executor.schedule(() -> System.out.println("Execução 1: " + Thread.currentThread().getName() + " - " + LocalTime.now()), 3, TimeUnit.SECONDS);
-      executor.schedule(() -> System.out.println("Execução 2: " + Thread.currentThread().getName() + " - " + LocalTime.now()), 3, TimeUnit.SECONDS);
-      executor.schedule(() -> System.out.println("Execução 3: " + Thread.currentThread().getName() + " - " + LocalTime.now()), 3, TimeUnit.SECONDS);
-      executor.schedule(() -> System.out.println("Execução 4: " + Thread.currentThread().getName() + " - " + LocalTime.now()), 3, TimeUnit.SECONDS);
-      executor.schedule(() -> System.out.println("Execução 5: " + Thread.currentThread().getName() + " - " + LocalTime.now()), 3, TimeUnit.SECONDS);
+      executor.schedule(() -> System.out.println("Execution 1: " + Thread.currentThread().getName() + " - " + LocalTime.now()), 3, TimeUnit.SECONDS);
+      executor.schedule(() -> System.out.println("Execution 2: " + Thread.currentThread().getName() + " - " + LocalTime.now()), 3, TimeUnit.SECONDS);
+      executor.schedule(() -> System.out.println("Execution 3: " + Thread.currentThread().getName() + " - " + LocalTime.now()), 3, TimeUnit.SECONDS);
+      executor.schedule(() -> System.out.println("Execution 4: " + Thread.currentThread().getName() + " - " + LocalTime.now()), 3, TimeUnit.SECONDS);
+      executor.schedule(() -> System.out.println("Execution 5: " + Thread.currentThread().getName() + " - " + LocalTime.now()), 3, TimeUnit.SECONDS);
     } finally {
       if (executor != null) {
         executor.shutdown();

@@ -9,12 +9,12 @@ public class TasksMulti_FixedThreadPool {
     // tag::code[]
     ExecutorService executor = null;
     try {
-      executor = Executors.newFixedThreadPool(2); // executor com duas threads
-      executor.execute(() -> System.out.println("Tarefa 1 - Thread do Executor: " + Thread.currentThread().getName()));
-      executor.execute(() -> System.out.println("Tarefa 2 - Thread do Executor: " + Thread.currentThread().getName()));
-      executor.execute(() -> System.out.println("Tarefa 3 - Thread do Executor: " + Thread.currentThread().getName()));
-      executor.execute(() -> System.out.println("Tarefa 4 - Thread do Executor: " + Thread.currentThread().getName()));
-      executor.execute(() -> System.out.println("Tarefa 5 - Thread do Executor: " + Thread.currentThread().getName()));
+      executor = Executors.newFixedThreadPool(2); // two thread executor
+      executor.execute(() -> System.out.println("Task 1 - Executor Thread: " + Thread.currentThread().getName()));
+      executor.execute(() -> System.out.println("Task 2 - Executor Thread: " + Thread.currentThread().getName()));
+      executor.execute(() -> System.out.println("Task 3 - Executor Thread: " + Thread.currentThread().getName()));
+      executor.execute(() -> System.out.println("Task 4 - Executor Thread: " + Thread.currentThread().getName()));
+      executor.execute(() -> System.out.println("Task 5 - Executor Thread: " + Thread.currentThread().getName()));
     } finally {
       if (executor != null) {
         executor.shutdown();

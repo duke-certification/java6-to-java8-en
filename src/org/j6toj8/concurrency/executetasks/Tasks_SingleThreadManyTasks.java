@@ -9,11 +9,11 @@ public class Tasks_SingleThreadManyTasks {
     // tag::code[]
     ExecutorService executor = null;
     try {
-      executor = Executors.newSingleThreadExecutor(); // executor com uma única thread
-      executor.execute(() -> System.out.println("Tarefa 1 - Thread do Executor: " + Thread.currentThread().getName()));
-      executor.execute(() -> System.out.println("Tarefa 2 - Thread do Executor: " + Thread.currentThread().getName()));
-      executor.execute(() -> System.out.println("Tarefa 3 - Thread do Executor: " + Thread.currentThread().getName()));
-      System.out.println("Thread Principal: " + Thread.currentThread().getName());
+      executor = Executors.newSingleThreadExecutor(); // executor with a single thread
+      executor.execute(() -> System.out.println("Task 1 - Executor Thread: " + Thread.currentThread().getName()));
+      executor.execute(() -> System.out.println("Task 2 - Executor Thread: " + Thread.currentThread().getName()));
+      executor.execute(() -> System.out.println("Task 3 - Executor Thread: " + Thread.currentThread().getName()));
+      System.out.println("Main Thread: " + Thread.currentThread().getName());
     } finally {
       if (executor != null) {
         executor.shutdown();

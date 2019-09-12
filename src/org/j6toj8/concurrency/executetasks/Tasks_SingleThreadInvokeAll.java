@@ -12,23 +12,23 @@ public class Tasks_SingleThreadInvokeAll {
 
   public static void main(String[] args) {
     // tag::code[]
-    List<Callable<String>> tarefas = new ArrayList<Callable<String>>();
-    tarefas.add(() -> "Tarefa 1 executada na thread " + Thread.currentThread().getName());
-    tarefas.add(() -> "Tarefa 2 executada na thread " + Thread.currentThread().getName());
-    tarefas.add(() -> "Tarefa 3 executada na thread " + Thread.currentThread().getName());
+    List<Callable<String>> tasks = new ArrayList<Callable<String>>();
+    tasks.add(() -> "Task 1 performed on thread" + Thread.currentThread().getName());
+    tasks.add(() -> "Task 2 performed on thread" + Thread.currentThread().getName());
+    tasks.add(() -> "Task 3 performed on thread" + Thread.currentThread().getName());
     
     ExecutorService executor = null;
     try {
       executor = Executors.newSingleThreadExecutor();
 
-      // invokeAll devolve todos os retornos das tarefas executadas em uma lista
-      List<Future<String>> retornos = executor.invokeAll(tarefas);
+      // invokeAll returns all returns of tasks performed in a list
+      List<Future<String>> returnList = executor.invokeAll(tasks);
       
-      for (Future<String> retorno : retornos) {
-        System.out.println("Retorno da tarefa: " + retorno.get());
+      for (Future<String> futureReturn : returnList) {
+        System.out.println("Task Return: " + futureReturn.get());
       }
     } catch (InterruptedException | ExecutionException e) {
-      System.out.println("Execução interrompida.");
+      System.out.println("Execution stopped.");
     } finally {
       if (executor != null) {
         executor.shutdown();

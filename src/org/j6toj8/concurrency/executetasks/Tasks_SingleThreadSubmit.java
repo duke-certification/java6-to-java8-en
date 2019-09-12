@@ -11,12 +11,12 @@ public class Tasks_SingleThreadSubmit {
     ExecutorService executor = null;
     try {
       executor = Executors.newSingleThreadExecutor();
-      Future<?> tarefa = executor.submit(() -> System.out.println("Thread do Executor: " + Thread.currentThread().getName()));
+      Future<?> task = executor.submit(() -> System.out.println("Executor Thread: " + Thread.currentThread().getName()));
 
-      System.out.println("Tarefa já finalizada? " + tarefa.isDone());
-      System.out.println("Tarefa já finalizada? " + tarefa.isDone());
-      System.out.println("Tarefa já finalizada? " + tarefa.isDone());
-      System.out.println("Tarefa já finalizada? " + tarefa.isDone());
+      System.out.println("Task already completed? " + task.isDone());
+      System.out.println("Task already completed? " + task.isDone());
+      System.out.println("Task already completed? " + task.isDone());
+      System.out.println("Task already completed? " + task.isDone());
     } finally {
       if (executor != null) {
         executor.shutdown();

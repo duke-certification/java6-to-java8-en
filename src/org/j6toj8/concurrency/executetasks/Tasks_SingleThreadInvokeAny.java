@@ -12,21 +12,21 @@ public class Tasks_SingleThreadInvokeAny {
 
   public static void main(String[] args) {
     // tag::code[]
-    List<Callable<String>> tarefas = new ArrayList<Callable<String>>();
-    tarefas.add(() -> "Tarefa 1 executada na thread " + Thread.currentThread().getName());
-    tarefas.add(() -> "Tarefa 2 executada na thread " + Thread.currentThread().getName());
-    tarefas.add(() -> "Tarefa 3 executada na thread " + Thread.currentThread().getName());
+    List<Callable<String>> tasks = new ArrayList<Callable<String>>();
+    tasks.add(() -> "Task 1 performed on thread" + Thread.currentThread().getName());
+    tasks.add(() -> "Task 2 performed on thread" + Thread.currentThread().getName());
+    tasks.add(() -> "Task 3 performed on thread" + Thread.currentThread().getName());
     
     ExecutorService executor = null;
     try {
       executor = Executors.newSingleThreadExecutor();
 
-      // invokeAny devolve apenas uma das tarefas que finalizou e interrompe as outras
-      String retorno = executor.invokeAny(tarefas);
-      System.out.println("Retorno da tarefa: " + retorno);
+      // invokeAny returns only one of the completed tasks and interrupts the others
+      String singleReturn = executor.invokeAny(tasks);
+      System.out.println("Task Return: " + singleReturn);
       
     } catch (InterruptedException | ExecutionException e) {
-      System.out.println("Execução interrompida.");
+      System.out.println("Execution stopped.");
     } finally {
       if (executor != null) {
         executor.shutdown();

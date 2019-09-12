@@ -10,11 +10,11 @@ public class Tasks_ShutdownNow {
     ExecutorService executor = null;
     try {
       executor = Executors.newSingleThreadExecutor();
-      executor.execute(() -> System.out.println("Thread do Executor: " + Thread.currentThread().getName()));
-      System.out.println("Thread Principal: " + Thread.currentThread().getName());
+      executor.execute(() -> System.out.println("Executor Thread: " + Thread.currentThread().getName()));
+      System.out.println("Main Thread: " + Thread.currentThread().getName());
     } finally {
       if (executor != null) {
-        executor.shutdownNow(); // TENTA encerrar todas as threads imediatamente
+        executor.shutdownNow(); // TRIES to shut down all threads immediately
       }
     }
     // end::code[]
