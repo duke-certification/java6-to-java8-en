@@ -6,14 +6,14 @@ public class MethodReference_TypeWithParam {
 
   public static void main(String[] args) {
     // tag::code[]
-    // representação com expressão lambda
-    BiFunction<Integer, Integer, Integer> comparador1 = (x, y) -> x.compareTo(y);
-    // representação com referência ao método compareTo do tipo Integer (que recebe um parâmetro)
-    BiFunction<Integer, Integer, Integer> comparador2 = Integer::compareTo;
+    // representation with lambda expression
+    BiFunction<Integer, Integer, Integer> comparator1 = (x, y) -> x.compareTo(y);
+    // representation with reference to compareTo method of type Integer (which takes a parameter)
+    BiFunction<Integer, Integer, Integer> comparator2 = Integer::compareTo;
 
-    // os resultados serão iguais
-    System.out.println(comparador1.apply(1, 2));
-    System.out.println(comparador2.apply(1, 2));
+    // the results will be the same
+    System.out.println(comparator1.apply(1, 2));
+    System.out.println(comparator2.apply(1, 2));
     // end::code[]
   }
   

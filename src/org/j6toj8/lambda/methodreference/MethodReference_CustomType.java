@@ -6,44 +6,42 @@ import java.util.function.Supplier;
 public class MethodReference_CustomType {
 
   // tag::code[]
-  static class SuperHeroi {
-    private Pessoa pessoa;
+  static class SuperHero {
+    private Person person;
 
-    public SuperHeroi(Pessoa pessoa) {
-      this.pessoa = pessoa;
+    public SuperHero(Person person) {
+      this.person = person;
     }
     
-    public static SuperHeroi crieSuperHeroi(Pessoa pessoa) {
-      return new SuperHeroi(pessoa);
+    public static SuperHero createSuperHero(Person person) {
+      return new SuperHero(person);
     }
-    
   }
   
-  static class Pessoa {
+  static class Person {
     
-    public SuperHeroi vireSuperHeroi() {
-      return new SuperHeroi(this);
+    public SuperHero becomeSuperHero() {
+      return new SuperHero(this);
     }
-    
   }
   
   public static void main(String[] args) {
-    // expressões lambda equivalentes utilizando chamada a método estático
-    Function<Pessoa, SuperHeroi> transformaEmHeroiStatic1 = p -> SuperHeroi.crieSuperHeroi(p);
-    Function<Pessoa, SuperHeroi> transformaEmHeroiStatic2 = SuperHeroi::crieSuperHeroi;
-    
-    // expressões lambda equivalentes utilizando construtor
-    Function<Pessoa, SuperHeroi> transformaEmHeroiConstrutor1 = p -> new SuperHeroi(p);
-    Function<Pessoa, SuperHeroi> transformaEmHeroiConstrutor2 = SuperHeroi::new;
-    
-    // expressões lambda equivalentes utilizando chamada de método comum, mas referenciando o método da classe
-    Function<Pessoa, SuperHeroi> transformaEmHeroiClasse1 = p -> p.vireSuperHeroi();
-    Function<Pessoa, SuperHeroi> transformaEmHeroiClasse2 = Pessoa::vireSuperHeroi;
-    
-    // expressões lambda equivalentes utilizando chamada de método comum, mas referenciando o método do objeto
-    Pessoa pessoa = new Pessoa();
-    Supplier<SuperHeroi> transformaEmHeroiInstancia1 = () -> pessoa.vireSuperHeroi();
-    Supplier<SuperHeroi> transformaEmHeroiInstancia2 = pessoa::vireSuperHeroi;
+    // equivalent lambda expressions using static method call
+    Function<Person, SuperHero> static1 = p -> SuperHero.createSuperHero(p);
+    Function<Person, SuperHero> static2 = SuperHero::createSuperHero;
+
+    // equivalent lambda expressions using constructor
+    Function<Person, SuperHero> construtor1 = p -> new SuperHero(p);
+    Function<Person, SuperHero> construtor2 = SuperHero::new;
+
+    // equivalent lambda expressions using common method call, but referencing class method
+    Function<Person, SuperHero> classe1 = p -> p.becomeSuperHero();
+    Function<Person, SuperHero> classe2 = Person::becomeSuperHero;
+
+    // equivalent lambda expressions using common method call, but referencing object method
+    Person person = new Person();
+    Supplier<SuperHero> instancia1 = () -> person.becomeSuperHero();
+    Supplier<SuperHero> instancia2 = person::becomeSuperHero;
   }
   // end::code[]
   
