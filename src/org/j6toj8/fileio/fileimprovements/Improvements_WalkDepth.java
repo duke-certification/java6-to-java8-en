@@ -11,11 +11,11 @@ public class Improvements_WalkDepth {
   public static void main(String[] args) {
     // tag::code[]
     String userHome = System.getProperty("user.home");
-    Path path = Paths.get(userHome, "arquivos");
+    Path path = Paths.get(userHome, "files");
     System.out.println("Path: " + path);
 
     try {
-      System.out.println("\nArquivos e Links simbólicos até o segundo nível: ");
+      System.out.println("\nSymbolic files and links to the second level: ");
       Files.walk(path, 2, FileVisitOption.FOLLOW_LINKS)
         .forEach(System.out::println);
     } catch (IOException e) {

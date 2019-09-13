@@ -10,11 +10,11 @@ public class Improvements_List {
   public static void main(String[] args) {
     // tag::code[]
     String userHome = System.getProperty("user.home");
-    Path path = Paths.get(userHome, "arquivos");
+    Path path = Paths.get(userHome, "files");
     System.out.println("Path: " + path);
 
     try {
-      System.out.println("\nListagem do diretório: ");
+      System.out.println("\nDirectory listing: ");
       Files.list(path)
         .forEach(System.out::println);
     } catch (IOException e) {
@@ -22,7 +22,7 @@ public class Improvements_List {
     }
     
     try {
-      System.out.println("\nListagem do diretório, apenas arquivos: ");
+      System.out.println("\nDirectory listing, files only: ");
       Files.list(path)
         .filter(p -> Files.isRegularFile(p))
         .forEach(System.out::println);
