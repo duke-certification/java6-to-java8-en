@@ -15,25 +15,25 @@ public class WatchService_CreateDelete {
   public static void main(String[] args) {
     // tag::code[]
     String userHome = System.getProperty("user.home");
-    Path path = Paths.get(userHome, "arquivos");
+    Path path = Paths.get(userHome, "files");
     System.out.println("Path: " + path);
 
-    // criação do WatchService - ainda sem monitorar nada
+    // WatchService creation - still not monitoring anything
     try (WatchService service = FileSystems.getDefault().newWatchService();) {
-      
-      // registro do WatchService no Path para monitorar os evento de CREATE e DELETE
+
+      // WatchService log in Path to monitor CREATE and DELETE events
       path.register(service, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_DELETE);
       
-      while (true) { // loop infinito
-        // take() irá retornar sempre que houverem eventos
-        // caso contrário a chamada fica parada esperando eventos ocorrerem
+      while (true) { // infinite loop
+        // take() will return whenever there are events
+        // otherwise the call is stopped waiting for events to occur
         WatchKey key = service.take();
-        List<WatchEvent<?>> pollEvents = key.pollEvents(); // recupera os eventos ocorridos
-        System.out.println("Eventos capturados. Quantidade: " + pollEvents.size());
-        for (WatchEvent<?> event : pollEvents) { // iteração sobre todos os eventos recuperados
-          System.out.println("Evento ocorrido. Tipo : " + event.kind() + ". Contexto: " + event.context());
+        List<WatchEvent<?>> pollEvents = key.pollEvents(); // recovers events
+        System.out.println("Events captured. Quantity: " + pollEvents.size());
+        for (WatchEvent<?> event : pollEvents) { // iteration over all retrieved events
+          System.out.println("Event occurred. Type: " + event.kind() + ". Context: " + event.context());
         }
-        key.reset(); // reseta o WatchKey para que possa ser utilizado novamente
+        key.reset(); // resets WatchKey so that it can be used again
       }
     } catch (IOException | InterruptedException e) {
       e.printStackTrace();
