@@ -10,11 +10,11 @@ public class Collections_Joining {
     // tag::code[]
     List<Integer> list = Arrays.asList(1,2,3,4,5,6,7,8,9);
     
-    String juncao = list.stream()
+    String join = list.stream()
       .map(n -> n.toString())
       .collect(Collectors.joining());
     
-    System.out.println("Junção dos valores como String: " + juncao);
+    System.out.println("Join values as String: " + join);
     // end::code[]
   }
  }

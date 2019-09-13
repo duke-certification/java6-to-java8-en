@@ -11,10 +11,10 @@ public class Collections_PartitioningBy {
     // tag::code[]
     List<Integer> list = Arrays.asList(1,2,3,4,5,6,7,8,9);
     
-    Map<Boolean, List<Integer>> mapaParImpar = list.stream()
+    Map<Boolean, List<Integer>> mapEvenOdd = list.stream()
       .collect(Collectors.partitioningBy(n -> n % 2 == 0));
     
-    System.out.println("Mapa de pares e ímpares: " + mapaParImpar);
+    System.out.println("Even and odd map: " + mapEvenOdd);
     // end::code[]
   }
  }
