@@ -7,11 +7,11 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public class Locks_ReadWriteLockInverted {
 
   // tag::code[]
-  static class Acao implements Runnable {
+  static class Action implements Runnable {
 
     private ReadWriteLock lock;
 
-    public Acao(ReadWriteLock reentrantLock) {
+    public Action(ReadWriteLock reentrantLock) {
       this.lock = reentrantLock;
     }
 
@@ -20,7 +20,7 @@ public class Locks_ReadWriteLockInverted {
       Lock writeLock = lock.writeLock();
       if (writeLock.tryLock()) {
         try {
-          System.out.println(Thread.currentThread().getName() + ": Conseguiu o Lock de escrita");
+          System.out.println(Thread.currentThread().getName() + ": Got the read Lock");
         } finally {
           writeLock.unlock();
         }
@@ -29,7 +29,7 @@ public class Locks_ReadWriteLockInverted {
       Lock readLock = lock.readLock();
       if (readLock.tryLock()) {
         try {
-          System.out.println(Thread.currentThread().getName() + ": Conseguiu o Lock de leitura");
+          System.out.println(Thread.currentThread().getName() + ": Got the write Lock");
         } finally {
           readLock.unlock();
         }
@@ -39,13 +39,13 @@ public class Locks_ReadWriteLockInverted {
   
   public static void main(String[] args) {
     ReadWriteLock lock = new ReentrantReadWriteLock();
-    
-    // Criação das threads
-    Thread thread1 = new Thread(new Acao(lock));
-    Thread thread2 = new Thread(new Acao(lock));
-    Thread thread3 = new Thread(new Acao(lock));
-    
-    // Execução das threads
+
+    // Thread creation
+    Thread thread1 = new Thread(new Action(lock));
+    Thread thread2 = new Thread(new Action(lock));
+    Thread thread3 = new Thread(new Action(lock));
+
+    // Thread Execution
     thread1.start();
     thread2.start();
     thread3.start();    

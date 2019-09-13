@@ -13,10 +13,10 @@ public class Files_ReadAllLines {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome);
 
-    Path path = Paths.get(userHome, "arquivo.txt");
+    Path path = Paths.get(userHome, "file.txt");
     try {
-      List<String> conteudo = Files.readAllLines(path);
-      System.out.println(conteudo);
+      List<String> content = Files.readAllLines(path);
+      System.out.println(content);
     } catch (IOException e) {
       e.printStackTrace();
     }

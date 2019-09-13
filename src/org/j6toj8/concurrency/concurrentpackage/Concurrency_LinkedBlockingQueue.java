@@ -13,13 +13,13 @@ public class Concurrency_LinkedBlockingQueue {
     try {
       queue.offer("ABC", 1, TimeUnit.SECONDS);
     } catch (InterruptedException e) {
-      System.out.println("Não conseguiu inserir em menos de 1 segundo.");
+      System.out.println("Failed to insert in less than 1 second.");
     }
     
     try {
       queue.poll(1, TimeUnit.SECONDS);
     } catch (InterruptedException e) {
-      System.out.println("Não conseguiu remover em menos de 1 segundo.");
+      System.out.println("Failed to remove in less than 1 second.");
     }    
     // end::code[]
   }

@@ -7,8 +7,8 @@ public class LambdaExpression_ForEach {
 
   public static void main(String[] args) {
     // tag::code[]
-    List<Integer> lista = Arrays.asList(1, 2, 3, 4, 5);
-    lista.forEach((numero) -> { System.out.println(numero); });
+    List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
+    list.forEach((number) -> { System.out.println(number); });
     // end::code[]
   }
 }

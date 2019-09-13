@@ -6,15 +6,15 @@ public class BuiltInInterfaces_OptionalOrElseThrow {
 
   // tag::code[]
   public static void main(String[] args) {
-    Optional<String> optionalVazio = Optional.empty();
-    Optional<String> optionalComValor = Optional.of("valor");
+    Optional<String> emptyOptional = Optional.empty();
+    Optional<String> optionalWithValue = Optional.of("value");
 
-    // Nesse caso será impresso o valor presente em Optional, pois ele está preenchido
-    String orElseThrow1 = optionalComValor.orElseThrow(() -> new RuntimeException());
+    // In this case the value present in Optional will be printed as it is filled
+    String orElseThrow1 = optionalWithValue.orElseThrow(() -> new RuntimeException());
     System.out.println(orElseThrow1);
     
-    // Nesse caso será lançada exceção, pois o Optional não está preenchido
-    String orElseThrow2 = optionalVazio.orElseThrow(() -> new RuntimeException());
+    // In this case exception will be thrown because Optional is not populated
+    String orElseThrow2 = emptyOptional.orElseThrow(() -> new RuntimeException());
   }
   // end::code[]
 

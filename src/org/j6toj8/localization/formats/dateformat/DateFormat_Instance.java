@@ -14,7 +14,7 @@ public class DateFormat_Instance {
     DateFormat dateTimeLongInstance = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG);
     DateFormat dateTimeUSInstance = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, Locale.US);
 
-    Date date = new Date(1000000000000L); // data em quantidade de milissegundos desde 01/01/1970
+    Date date = new Date(1000000000000L); // date in milliseconds since 01/01/1970
 
     System.out.println(dateInstance.format(date));
     System.out.println(timeInstance.format(date));

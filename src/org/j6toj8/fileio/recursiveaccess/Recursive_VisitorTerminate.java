@@ -11,13 +11,13 @@ import java.nio.file.attribute.BasicFileAttributes;
 public class Recursive_VisitorTerminate {
 
   // tag::code[]
-  static class MeuFileVisitor extends SimpleFileVisitor<Path> {
+  static class MyFileVisitor extends SimpleFileVisitor<Path> {
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-      System.out.println("Arquivo visitado: " + file + ". Tamanho: " + attrs.size());
-      if (file.getFileName().toString().equals("arquivo122.txt")) {
-        System.out.println("Arquivo encontrado. Finalizando.");
-        return FileVisitResult.TERMINATE; // finaliza o acesso à árvore de arquivos
+      System.out.println("Visited file: " + file + ". Size: " + attrs.size());
+      if (file.getFileName().toString().equals("file122.txt")) {
+        System.out.println("File found. Terminating.");
+        return FileVisitResult.TERMINATE; // terminates file tree access
       }
       return FileVisitResult.CONTINUE;
     }
@@ -25,10 +25,10 @@ public class Recursive_VisitorTerminate {
   
   public static void main(String[] args) {
     String userHome = System.getProperty("user.home");
-    Path path = Paths.get(userHome, "arquivos");
+    Path path = Paths.get(userHome, "files");
     System.out.println("Path: " + path);
     try {
-      Files.walkFileTree(path, new MeuFileVisitor());
+      Files.walkFileTree(path, new MyFileVisitor());
     } catch (IOException e) {
       e.printStackTrace();
     }

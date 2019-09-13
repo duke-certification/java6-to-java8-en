@@ -7,11 +7,11 @@ public class Locale_Complete {
 
   // tag::code[]
   public static void main(String[] args) throws IOException {
-    System.out.println(" - Constantes - ");
+    System.out.println(" - Constants - ");
     System.out.println(Locale.CANADA);
     System.out.println(Locale.UK);
     
-    System.out.println(" - Construtor - ");
+    System.out.println(" - Constructor - ");
     System.out.println(new Locale("pt", "BR"));
     System.out.println(new Locale("pt", "PT"));
     System.out.println(new Locale("ca", "ES", "VALENCIA"));

@@ -4,13 +4,14 @@ public class FunctionalInterfaces_ExtendsNewMethod {
 
   // tag::code[]
   @FunctionalInterface
-  interface Executavel { // interface funcional
-    void execute(); // método funcional
+  interface Executable { // functional interface
+    void execute(); // functional method
   }
-  
-  interface Aplicacao extends Executavel {
-    // NÃO é uma interface funcional, pois possui 2 métodos abstratos: execute (herdado) e inicie.
-    void inicie();
-  } 
+
+  @FunctionalInterface
+  interface Application extends Executable {
+    // It is NOT a functional interface as it has 2 abstract methods: execute (inherited) and init.
+    void init();
+  }
   // end::code[]
 }

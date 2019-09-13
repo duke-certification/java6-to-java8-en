@@ -11,7 +11,7 @@ public class Locks_UnlockWithoutLock {
     try {
       System.out.println("ABC");
     } finally {
-      lock.unlock(); // lança exceção, pois não há lock
+      lock.unlock(); // throws exception as there is no lock
     }
     // end::code[]
   }

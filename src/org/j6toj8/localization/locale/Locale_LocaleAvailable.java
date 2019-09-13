@@ -8,7 +8,7 @@ public class Locale_LocaleAvailable {
   // tag::code[]
   public static void main(String[] args) throws IOException {
     Locale[] availableLocales = Locale.getAvailableLocales();
-    // imprime o 10 primeiros Locales disponíveis
+    // prints the first 10 available locales
     for (int i = 0; i < 10; i++) {
       System.out.println(availableLocales[i]);
     }

@@ -12,22 +12,22 @@ public class Streams_CollectorToCollect {
 
   public static void main(String[] args) {
     // tag::code[]
-    // Armazena o resultado do Stream em um ArrayList
+    // store Stream result in an ArrayList
     Collection<Integer> collect = Stream.of(1, 2, 3, 4)
       .collect(Collectors.toCollection(ArrayList::new));
     System.out.println("ArrayList: " + collect);
     
-    // Armazena o resultado do Stream em um HashSet
+    // store Stream result in a HashSet
     Collection<Integer> collect2 = Stream.of(1, 2, 3, 4)
       .collect(Collectors.toCollection(HashSet::new));
     System.out.println("HashSet: " + collect2);
     
-    // Armazena o resultado do Stream em uma LinkedList
+    // store Stream result in a LinkedList
     Collection<Integer> collect3 = Stream.of(1, 2, 3, 4)
       .collect(Collectors.toCollection(LinkedList::new));
     System.out.println("LinkedList: " + collect3);
 
-    // Armazena o resultado do Stream em um TreeSet
+    // store Stream result in a TreeSet
     Collection<Integer> collect4 = Stream.of(1, 2, 3, 4)
       .collect(Collectors.toCollection(TreeSet::new));
     System.out.println("TreeSet: " + collect4);

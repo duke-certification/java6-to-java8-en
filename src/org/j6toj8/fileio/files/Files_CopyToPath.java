@@ -15,15 +15,14 @@ public class Files_CopyToPath {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome);
 
-    // Utilizando um nome aleatório de arquivo,
-    // apenas para o exemplo executar inúmeras vezes sem problemas
-    String nomeAleatorio = "copia" + new Random().nextInt() + ".txt";
+    // Using a random file name, just for example to run countless times without problems
+    String randomName = "copy" + new Random().nextInt() + ".txt";
     
-    try (FileInputStream fis = new FileInputStream(userHome + File.separator + "arquivo1.txt")) {
-      Path pathParaCopia = Paths.get(userHome, nomeAleatorio);
-      System.out.println("Path 2 existe? " + Files.exists(pathParaCopia));
-      Files.copy(fis, pathParaCopia);
-      System.out.println("Path 2 existe? " + Files.exists(pathParaCopia));
+    try (FileInputStream fis = new FileInputStream(userHome + File.separator + "file1.txt")) {
+      Path pathToCopy = Paths.get(userHome, randomName);
+      System.out.println("Path 2 exist? " + Files.exists(pathToCopy));
+      Files.copy(fis, pathToCopy);
+      System.out.println("Path 2 exist? " + Files.exists(pathToCopy));
     } catch (IOException e) {
       e.printStackTrace();
     }

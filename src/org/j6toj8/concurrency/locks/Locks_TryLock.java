@@ -8,13 +8,13 @@ public class Locks_TryLock {
   public static void main(String[] args) {
     // tag::code[]
     Lock lock = new ReentrantLock();
-    boolean temLock = lock.tryLock();
+    boolean hasLock = lock.tryLock();
     
-    if (temLock) {
+    if (hasLock) {
       try {
         System.out.println("ABC");
       } finally {
-        lock.unlock(); // desfaz o lock
+        lock.unlock(); // undo the lock
       }
     } else {
       System.out.println("DEF");

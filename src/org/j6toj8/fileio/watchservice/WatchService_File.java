@@ -12,11 +12,11 @@ public class WatchService_File {
   public static void main(String[] args) {
     // tag::code[]
     String userHome = System.getProperty("user.home");
-    Path path = Paths.get(userHome, "arquivos", "arquivo1.txt"); // NÃO SUPORTADO
+    Path path = Paths.get(userHome, "files", "file1.txt"); // NOT SUPPORTED
     System.out.println("Path: " + path);
 
     try (WatchService service = FileSystems.getDefault().newWatchService();) {
-      path.register(service, StandardWatchEventKinds.ENTRY_MODIFY); // LANÇA EXCEÇÃO
+      path.register(service, StandardWatchEventKinds.ENTRY_MODIFY); // THROWS EXCEPTION
     } catch (IOException e) {
       e.printStackTrace();
     }

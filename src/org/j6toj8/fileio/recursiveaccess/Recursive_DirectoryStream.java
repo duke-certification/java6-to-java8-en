@@ -11,11 +11,11 @@ public class Recursive_DirectoryStream {
   public static void main(String[] args) {
     // tag::code[]
     String userHome = System.getProperty("user.home");
-    Path path = Paths.get(userHome, "arquivos");
+    Path path = Paths.get(userHome, "files");
     System.out.println("Path: " + path);
 
     try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path)) {
-      // iteração com sintaxe for-each
+      // iteration with for-each syntax
       for (Path subPath : directoryStream) {
         System.out.println(subPath);
       }
@@ -24,7 +24,7 @@ public class Recursive_DirectoryStream {
     }
     
     try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path)) {
-      // iteração com operação forEach e expressão lambda
+      // iteration with forEach operation and lambda expression
       directoryStream.forEach(p -> System.out.println(p));
     } catch (IOException e) {
       e.printStackTrace();

@@ -11,15 +11,15 @@ public class Schedule_SingleThreadFixedDelay {
   public static void main(String[] args) {
     ScheduledExecutorService executor = null;
     try {
-      executor = Executors.newSingleThreadScheduledExecutor(); // executor de agendamento com uma única thread
-      System.out.println("Antes do agendamento: " + LocalTime.now()); // imprime a hora atual
-      executor.scheduleWithFixedDelay(() -> System.out.println("Execução: " + LocalTime.now()), 3, 1, TimeUnit.SECONDS);
-      System.out.println("Após do agendamento: " + LocalTime.now()); // imprime a hora atual
-      sleep(); // aguarda um tempo para ser possível enxergar as execuções
-      System.out.println("Após o sleep de 10 segundos: " + LocalTime.now()); // imprime a hora atual
+      executor = Executors.newSingleThreadScheduledExecutor(); // single thread scheduler
+      System.out.println("Before Scheduling: " + LocalTime.now()); // print the current time
+      executor.scheduleWithFixedDelay(() -> System.out.println("Execution: " + LocalTime.now()), 3, 1, TimeUnit.SECONDS);
+      System.out.println("After Scheduling: " + LocalTime.now()); // print the current time
+      sleep(); // waits a while to be able to see the executions
+      System.out.println("After 10 seconds sleep: " + LocalTime.now()); // print the current time
     } finally {
       if (executor != null) {
-        System.out.println("Invocando shutdown no executor.");
+        System.out.println("Invoking shutdown on executor.");
         executor.shutdown();
       }
     }

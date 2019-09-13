@@ -4,14 +4,14 @@ public class FunctionalInterfaces_InterfaceCompilationError {
 
   // tag::code[]
   @FunctionalInterface
-  interface Executavel { // interface funcional
-    void execute(); // método funcional
+  interface Executable { // function interface
+    void execute(); // functional method
   }
   
   @FunctionalInterface
-  interface Aplicacao extends Executavel { // NÃO COMPILA!
-    // não pode ser anotada como funcional, pois possui 2 métodos abstratos
-    void inicie();
+  interface Application extends Executable { // NOT COMPILING!
+    // cannot be annotated as functional as it has 2 abstract methods
+    void init();
   } 
   // end::code[]
 }

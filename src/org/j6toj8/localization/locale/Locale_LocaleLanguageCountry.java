@@ -7,10 +7,10 @@ public class Locale_LocaleLanguageCountry {
 
   public static void main(String[] args) throws IOException {
     // tag::code[]
-    new Locale("pt", "BR"); // Português do Brasil
-    new Locale("en", "US"); // Inglês dos EUA
-    new Locale("it", "CH"); // Italiano da Suíça
-    new Locale("fr", "BE"); // Francês da Bélgica
+    new Locale("pt", "BR"); // Brazilian Portuguese
+    new Locale("en", "US"); // US English
+    new Locale("it", "CH"); // Italian from Switzerland
+    new Locale("fr", "BE"); // French from Belgium
     // end::code[]
   }
 }

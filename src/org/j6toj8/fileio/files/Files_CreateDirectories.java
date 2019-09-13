@@ -13,25 +13,24 @@ public class Files_CreateDirectories {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome);
 
-    // Utilizando um nome aleatório de diretório,
-    // apenas para o exemplo executar inúmeras vezes sem problemas
-    String nomeAleatorio1 = "arquivo" + new Random().nextInt();
-    String nomeAleatorio2 = "arquivo" + new Random().nextInt();
-    String nomeAleatorio3 = "arquivo" + new Random().nextInt();
+    // Using a random directory name, just for example to run countless times without problems
+    String randomName1 = "file" + new Random().nextInt();
+    String randomName2 = "file" + new Random().nextInt();
+    String randomName3 = "file" + new Random().nextInt();
     
-    Path path = Paths.get(userHome, nomeAleatorio1, nomeAleatorio2, nomeAleatorio3);
+    Path path = Paths.get(userHome, randomName1, randomName2, randomName3);
     System.out.println("Path: " + path);
 
     try {
-      Files.createDirectory(path); // MÉTODO ERRADO, LANÇA EXCEÇÃO
+      Files.createDirectory(path); // WRONG METHOD, THROWS EXCEPTION
     } catch (IOException e) {
       e.printStackTrace();
     }
     
     try {
-      System.out.println("Path existe? " + Files.exists(path));
+      System.out.println("Path exist? " + Files.exists(path));
       Files.createDirectories(path);
-      System.out.println("Path existe? " + Files.exists(path));
+      System.out.println("Path exist? " + Files.exists(path));
     } catch (IOException e) {
       e.printStackTrace();
     }

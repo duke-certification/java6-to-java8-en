@@ -8,12 +8,11 @@ public class BuiltInInterfaces_PredicateExample {
 
   // tag::code[]
   public static void main(String[] args) {
-    Predicate<Integer> dado = x -> x.equals(new Random().nextInt(7));
-    System.out.println(dado.test(1)); // testa se o número gerado é igual a 1
+    Predicate<Integer> dice = x -> x.equals(new Random().nextInt(7));
+    System.out.println(dice.test(1)); // tests if the generated number is equal to 1
 
-    BiPredicate<Integer, Integer> dadoDuplo = (x, y) -> x.equals(new Random().nextInt(7)) || y.equals(new Random().nextInt(7));
-    System.out.println(dadoDuplo.test(1, 2)); // testa se o primeiro número gerado é igual a 1
-                                              // ou se o segundo número gerado é igual a 2
+    BiPredicate<Integer, Integer> doubleDice = (x, y) -> x.equals(new Random().nextInt(7)) || y.equals(new Random().nextInt(7));
+    System.out.println(doubleDice.test(1, 2)); // tests if the first generated number equals 1 or if the second generated number equals 2
   }
   // end::code[]
 

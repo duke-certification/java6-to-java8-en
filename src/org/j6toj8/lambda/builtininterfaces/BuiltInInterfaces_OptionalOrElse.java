@@ -6,22 +6,22 @@ public class BuiltInInterfaces_OptionalOrElse {
 
   // tag::code[]
   public static void main(String[] args) {
-    // Exemplo com Optional vazio
-    Optional<String> optionalVazio = Optional.empty();
+    // Example with empty Optional
+    Optional<String> emptyOptional = Optional.empty();
 
-    // as duas variáveis abaixo terão a String "valor padrao", pois o optional está vazio
-    String orElse = optionalVazio.orElse("valor padrao"); // obtém a String diretamente
-    String orElseGet = optionalVazio.orElseGet(() -> { return "valor padrao"; }); // obtém a String através da expressão lambda
+    // the two variables below will have the string "default value" because optional is empty
+    String orElse = emptyOptional.orElse("default value"); // get the String directly
+    String orElseGet = emptyOptional.orElseGet(() -> { return "default value"; }); // get String through lambda expression
     
     System.out.println(orElse);
     System.out.println(orElseGet);
     
-    // Exemplo com Optional com valor
-    Optional<String> optionalComValor = Optional.of("valor");
+    // Example with Optional with value
+    Optional<String> optionalWithValue = Optional.of("value");
 
-    // as duas variáveis abaixo irão utilizar o valor presente no optional, pois ele já está preenchido
-    String orElse2 = optionalComValor.orElse("valor padrao");
-    String orElseGet2 = optionalComValor.orElseGet(() -> { return "valor padrao"; });
+    // the two variables below will use the value present in optional as it is already filled
+    String orElse2 = optionalWithValue.orElse("default value");
+    String orElseGet2 = optionalWithValue.orElseGet(() -> { return "default value"; });
     
     System.out.println(orElse2);
     System.out.println(orElseGet2);

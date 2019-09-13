@@ -13,23 +13,22 @@ public class Files_DeletePath {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome);
 
-    // Utilizando um nome aleatório de arquivo,
-    // apenas para o exemplo executar inúmeras vezes sem problemas
-    String nomeAleatorio = "arquivo" + new Random().nextInt() + ".txt";
+    // Using a random file name, just for example to run countless times without problems
+    String randomName = "file" + new Random().nextInt() + ".txt";
     
-    Path path = Paths.get(userHome, nomeAleatorio);
+    Path path = Paths.get(userHome, randomName);
     System.out.println("Path: " + path);
 
     try {
-      System.out.println("Path existe? " + Files.exists(path));
+      System.out.println("Path exist? " + Files.exists(path));
       Files.createFile(path);
-      System.out.println("Path existe? " + Files.exists(path));
+      System.out.println("Path exist? " + Files.exists(path));
       
-      Files.delete(path); // tenta apagadar o Path e lança exceção se ele não existir
-      System.out.println("Path existe? " + Files.exists(path));
+      Files.delete(path); // try to delete Path and throw exception if it doesn't exist
+      System.out.println("Path exist? " + Files.exists(path));
       
-      Files.deleteIfExists(path); // tenta apagadar o Path e não faz nada se ele não existir
-      System.out.println("Path existe? " + Files.exists(path));
+      Files.deleteIfExists(path); // try to delete the Path and do nothing if it doesn't exist
+      System.out.println("Path exist? " + Files.exists(path));
     } catch (IOException e) {
       e.printStackTrace();
     }

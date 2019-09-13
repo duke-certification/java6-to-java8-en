@@ -7,13 +7,13 @@ public class NumberFormat_Instance {
 
   public static void main(String[] args) {
     // tag::code[]
-    // sem Locale
+    // without Locale
     NumberFormat instance1 = NumberFormat.getInstance();
-    NumberFormat instance2 = NumberFormat.getNumberInstance(); // igual a getInstance()
+    NumberFormat instance2 = NumberFormat.getNumberInstance(); // equals to getInstance()
     NumberFormat instance3 = NumberFormat.getCurrencyInstance();
     NumberFormat instance4 = NumberFormat.getPercentInstance();
 
-    // com Locale
+    // with Locale
     NumberFormat instance5 = NumberFormat.getInstance(new Locale("pt", "BR"));
     NumberFormat instance6 = NumberFormat.getNumberInstance(new Locale("pt", "BR"));
     NumberFormat instance7 = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));

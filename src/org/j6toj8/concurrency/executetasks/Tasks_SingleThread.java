@@ -9,9 +9,9 @@ public class Tasks_SingleThread {
     // tag::code[]
     ExecutorService executor = null;
     try {
-      executor = Executors.newSingleThreadExecutor(); // executor com uma única thread
-      executor.execute(() -> System.out.println("Thread do Executor: " + Thread.currentThread().getName()));
-      System.out.println("Thread Principal: " + Thread.currentThread().getName());
+      executor = Executors.newSingleThreadExecutor(); // single thread executor
+      executor.execute(() -> System.out.println("Executor Thread: " + Thread.currentThread().getName()));
+      System.out.println("Main Thread: " + Thread.currentThread().getName());
     } finally {
       if (executor != null) {
         executor.shutdown();

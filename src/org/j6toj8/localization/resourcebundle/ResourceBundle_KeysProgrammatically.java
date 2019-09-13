@@ -9,12 +9,12 @@ public class ResourceBundle_KeysProgrammatically {
   // tag::code[]
   public static void main(String[] args) {
 
-    Locale.setDefault(new Locale("en", "US")); // Coloca o Locale en_US como padrão
+    Locale.setDefault(new Locale("en", "US")); // Set Locale en_US as default
     
-    ResourceBundle bundle = ResourceBundle.getBundle("Text", new Locale("pt", "BR")); // Recupera o bundle 'Text' para o Locale pt_BR
-    Set<String> keySet = bundle.keySet(); // Pega um Set com todas as chaves
+    ResourceBundle bundle = ResourceBundle.getBundle("Text", new Locale("pt", "BR")); // Retrieve 'Text' bundle for Locale pt_BR
+    Set<String> keySet = bundle.keySet(); // Get a set with all the keys
     for (String key : keySet) {
-      System.out.println(key + " - " + bundle.getString(key)); // Imprime "<chave> - <valor>" 
+      System.out.println(key + " - " + bundle.getString(key)); // Print "<key> - <value>"
     }
 
   }

@@ -23,7 +23,7 @@ public class NumberFormat_StringToNumber {
       System.out.println("en_US: " + parseEnUS);
       System.out.println("fr_FR: " + parseFrFR);
     } catch (ParseException e) {
-      // trate a exceção no parse
+      // treat exception in parse
     }
     // end::code[]
   }

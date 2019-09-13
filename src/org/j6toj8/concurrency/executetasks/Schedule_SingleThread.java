@@ -11,10 +11,10 @@ public class Schedule_SingleThread {
     // tag::code[]
     ScheduledExecutorService executor = null;
     try {
-      executor = Executors.newSingleThreadScheduledExecutor(); // executor de agendamento com uma única thread
-      System.out.println("Agora: " + LocalTime.now()); // imprime a hora atual
+      executor = Executors.newSingleThreadScheduledExecutor(); // single thread scheduler
+      System.out.println("Now: " + LocalTime.now()); // print the current time
       
-      executor.schedule(() -> System.out.println("Execução: " + LocalTime.now()), 3, TimeUnit.SECONDS);
+      executor.schedule(() -> System.out.println("Execution: " + LocalTime.now()), 3, TimeUnit.SECONDS);
     } finally {
       if (executor != null) {
         executor.shutdown();

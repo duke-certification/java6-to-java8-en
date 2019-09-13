@@ -10,21 +10,21 @@ public class Paths_Information {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome + "\n");
 
-    Path path1 = Paths.get(userHome, "arquivos", "arquivo.txt"); // absoluto
-    System.out.println("Representação em String: " + path1.toString());
-    System.out.println("Nome do Arquivo: " + path1.getFileName());
-    System.out.println("Diretório Superior: " + path1.getParent());
-    System.out.println("Diretório Raiz: " + path1.getRoot());
-    System.out.println("É absoluto?: " + path1.isAbsolute());
+    Path path1 = Paths.get(userHome, "files", "file.txt"); // absolute
+    System.out.println("String representation: " + path1.toString());
+    System.out.println("File Name: " + path1.getFileName());
+    System.out.println("Top Directory: " + path1.getParent());
+    System.out.println("Root Directory: " + path1.getRoot());
+    System.out.println("Is it absolute?: " + path1.isAbsolute());
     
     System.out.println();
     
-    Path path2 = Paths.get("home", "rinaldo", "arquivos"); // relativo
-    System.out.println("Representação em String: " + path2.toString());
-    System.out.println("Nome do Arquivo: " + path2.getFileName());
-    System.out.println("Diretório Superior: " + path2.getParent());
-    System.out.println("Diretório Raiz: " + path2.getRoot());
-    System.out.println("É absoluto?: " + path2.isAbsolute());
+    Path path2 = Paths.get("home", "rinaldo", "files"); // relative
+    System.out.println("String representation: " + path2.toString());
+    System.out.println("File Name: " + path2.getFileName());
+    System.out.println("Top Directory: " + path2.getParent());
+    System.out.println("Root Directory: " + path2.getRoot());
+    System.out.println("Is it absolute?: " + path2.isAbsolute());
     // end::code[]
   }
 

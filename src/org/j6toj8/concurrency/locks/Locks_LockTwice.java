@@ -13,8 +13,8 @@ public class Locks_LockTwice {
       lock.lock();
       System.out.println("ABC");
     } finally {
-      lock.unlock(); // desfaz o primeiro lock
-      lock.unlock(); // desfaz o segundo lock
+      lock.unlock(); // undo the first lock
+      lock.unlock(); // undo the second lock
     }
     // end::code[]
   }

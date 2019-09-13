@@ -6,9 +6,9 @@ public class Streams_Skip {
 
   public static void main(String[] args) {
     // tag::code[]
-    IntStream.range(0, 4) // stream de 0 a 3
-      .skip(2) // ignora 2 elementos
-      .forEach(System.out::println); // imprime os elementos
+    IntStream.range(0, 4) // stream from 0 to 3
+      .skip(2) // ignore 2 elements
+      .forEach(System.out::println); // prints the elements
     // end::code[]
   }
 }

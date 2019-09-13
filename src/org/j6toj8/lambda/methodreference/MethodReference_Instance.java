@@ -5,23 +5,23 @@ import java.util.function.BiFunction;
 public class MethodReference_Instance {
 
   // tag::code[]
-  static class Conversor {
-    public String converte(Integer x, Integer y) {
+  static class Converter {
+    public String convert(Integer x, Integer y) {
       return String.valueOf(x) + " - " + String.valueOf(y);
     }
   }
   
   public static void main(String[] args) {
-    Conversor conversor = new Conversor(); // instância da classe Conversor
+    Converter converter = new Converter(); // instance of the Converter class
     
-    // representação com expressão lambda
-    BiFunction<Integer, Integer, String> converte1 = (x, y) -> conversor.converte(x, y);
-    // representação com referência ao método da instância
-    BiFunction<Integer, Integer, String> converte2 = conversor::converte;
+    // representation with lambda expression
+    BiFunction<Integer, Integer, String> convert1 = (x, y) -> converter.convert(x, y);
+    // representation with reference to instance method
+    BiFunction<Integer, Integer, String> convert2 = converter::convert;
 
-    // os resultados serão iguais
-    System.out.println(converte1.apply(5, 8));
-    System.out.println(converte2.apply(5, 8));
+    // the results will be the same
+    System.out.println(convert1.apply(5, 8));
+    System.out.println(convert2.apply(5, 8));
   }
   // end::code[]
   

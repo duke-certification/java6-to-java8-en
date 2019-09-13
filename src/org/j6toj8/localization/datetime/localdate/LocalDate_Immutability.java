@@ -9,9 +9,9 @@ public class LocalDate_Immutability {
     // tag::code[]
     LocalDate localDate = LocalDate.of(2019, Month.MAY, 20);
     System.out.println(localDate);
-    localDate.plusDays(1); // chamada perdida - a nova data não foi armazenada em uma variável
+    localDate.plusDays(1); // missed call - new date was not stored in a variable
     System.out.println(localDate);
-    localDate = localDate.plusDays(1); // chamada útil - data armazenada na variável
+    localDate = localDate.plusDays(1); // useful call - date stored in variable
     System.out.println(localDate);
     // end::code[]
   }

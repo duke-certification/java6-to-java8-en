@@ -11,18 +11,18 @@ public class Paths_ToRealPath {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome);
 
-    Path pathQueExiste = Paths.get(userHome, "arquivo1.txt");
-    Path pathQueNaoExiste = Paths.get(userHome, "arquivoQueNaoExiste.txt");
+    Path pathThatDoesExist = Paths.get(userHome, "file1.txt");
+    Path pathThatDoesNotExist = Paths.get(userHome, "fileThatDoesNotExist.txt");
     
     try {
-      Path realPath = pathQueExiste.toRealPath();
+      Path realPath = pathThatDoesExist.toRealPath();
       System.out.println("realPath: " + realPath);
     } catch (IOException e) {
       e.printStackTrace();
     }
     
     try {
-      pathQueNaoExiste.toRealPath(); // LANÇA EXCEÇÃO
+      pathThatDoesNotExist.toRealPath(); // THROWS EXCEPTION
     } catch (IOException e) {
       e.printStackTrace();
     }

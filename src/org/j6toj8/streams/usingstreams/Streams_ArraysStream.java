@@ -6,10 +6,9 @@ public class Streams_ArraysStream {
 
   public static void main(String[] args) {
     // tag::code[]
-    // Criação de um array comum de Strings
+    // Create a common string array
     String[] array = new String[] { "A", "B", "C" };
-    // Criação de um Stream a partir do array e, para
-    // cada elemento, o método println é chamado.
+    // Create a stream from the array and, for each element, the println method is called.
     Arrays.stream(array).forEach(System.out::println); 
     // end::code[]
   }

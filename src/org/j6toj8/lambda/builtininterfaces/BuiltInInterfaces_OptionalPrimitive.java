@@ -6,14 +6,14 @@ public class BuiltInInterfaces_OptionalPrimitive {
 
   public static void main(String[] args) {
     // tag::code[]
-    OptionalInt optionalComValor = OptionalInt.of(5);
-    OptionalInt optionalVazio = OptionalInt.empty();
+    OptionalInt optionalWithValue = OptionalInt.of(5);
+    OptionalInt emptyOptional = OptionalInt.empty();
 
-    if (optionalComValor.isPresent()) {
-      System.out.println(optionalComValor.getAsInt());
+    if (optionalWithValue.isPresent()) {
+      System.out.println(optionalWithValue.getAsInt());
     }
-    if (optionalVazio.isPresent()) {
-      System.out.println(optionalVazio.getAsInt());
+    if (emptyOptional.isPresent()) {
+      System.out.println(emptyOptional.getAsInt());
     }
     // end::code[]
   }

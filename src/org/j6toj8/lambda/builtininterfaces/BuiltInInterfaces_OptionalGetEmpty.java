@@ -6,11 +6,11 @@ public class BuiltInInterfaces_OptionalGetEmpty {
 
   public static void main(String[] args) {
     // tag::code[]
-    Optional<String> optionalComValor = Optional.of("valor");
-    System.out.println(optionalComValor.get()); // recupera o valor corretamente
+    Optional<String> optionalWithValue = Optional.of("value");
+    System.out.println(optionalWithValue.get()); // retrieve value correctly
 
-    Optional<String> optionalVazio = Optional.empty();
-    System.out.println(optionalVazio.get()); // lança exceção
+    Optional<String> emptyOptional = Optional.empty();
+    System.out.println(emptyOptional.get()); // throws exception
     // end::code[]
   }
 

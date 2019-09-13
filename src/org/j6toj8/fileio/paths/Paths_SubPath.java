@@ -10,7 +10,7 @@ public class Paths_SubPath {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome);
 
-    Path path = Paths.get(userHome, "arquivos", "arquivo1.txt");
+    Path path = Paths.get(userHome, "files", "file1.txt");
     System.out.println("Path: " + path);
     
     Path subpath1 = path.subpath(0, 1);
@@ -25,7 +25,7 @@ public class Paths_SubPath {
     Path subpath4 = path.subpath(2, 4);
     System.out.println(subpath4);
     
-    Path subpath5 = path.subpath(3, 5); // EXCEÇÃO, pois só existem 4 elementos no path
+    Path subpath5 = path.subpath(3, 5); // EXCEPTION, as there are only 4 elements in path
     // end::code[]
   }
 

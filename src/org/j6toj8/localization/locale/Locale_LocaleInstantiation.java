@@ -7,11 +7,11 @@ public class Locale_LocaleInstantiation {
 
   // tag::code[]
   public static void main(String[] args) throws IOException {
-    new Locale("pt", "BR"); // pt-BR com Construtor
+    new Locale("pt", "BR"); // pt-BR with constructor
     
-    Locale.forLanguageTag("pt-BR"); // pt-BR com LanguageTag
+    Locale.forLanguageTag("pt-BR"); // pt-BR with LanguageTag
     
-    Locale localePtBR = new Locale.Builder() // pt-BR com Builder
+    Locale localePtBR = new Locale.Builder() // pt-BR with Builder
       .setLanguage("pt")
       .setRegion("BR")
       .build();

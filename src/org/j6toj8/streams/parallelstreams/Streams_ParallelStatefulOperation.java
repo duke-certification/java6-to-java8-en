@@ -12,12 +12,12 @@ public class Streams_ParallelStatefulOperation {
     List<String> synchronizedList = Collections.synchronizedList(new ArrayList<>());
     List<String> list = Arrays.asList("A", "B", "C");
 
-    System.out.println("Ordem no forEachOrdered: ");
+    System.out.println("Order on forEachOrdered: ");
     list.parallelStream()
-        .map(s -> {synchronizedList.add(s); return s;}) // operação com efeito colateral - altera o estado de um objeto
+        .map(s -> {synchronizedList.add(s); return s;}) // side effect operation - changes the state of an object
         .forEachOrdered(System.out::println);
     
-    System.out.println("Ordem na synchronizedList: ");
+    System.out.println("Order on synchronizedList: ");
     for (String s : synchronizedList) {
       System.out.println(s);
     }

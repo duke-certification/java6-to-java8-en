@@ -9,18 +9,18 @@ public class LocalTime_Manipulate {
     // tag::code[]
     LocalTime localTime = LocalTime.of(9, 26, 12);
     System.out.println(localTime);
-    System.out.println("+2 horas: " + localTime.plusHours(2));
-    System.out.println("+2 minutos: " + localTime.plusMinutes(2));
-    System.out.println("+2 segundos: " + localTime.plusSeconds(2));
-    System.out.println("+2 nanosegundos: " + localTime.plusNanos(2));
-    System.out.println("+2 microssegundos: " + localTime.plus(2, ChronoUnit.MICROS));
-    System.out.println("+2 milissegundos: " + localTime.plus(2, ChronoUnit.MILLIS));
-    System.out.println("-2 horas: " + localTime.minusHours(2));
-    System.out.println("-2 minutos: " + localTime.minusMinutes(2));
-    System.out.println("-2 segundos: " + localTime.minusSeconds(2));
-    System.out.println("-2 nanosegundos: " + localTime.minusNanos(2));
-    System.out.println("-2 microssegundos: " + localTime.minus(2, ChronoUnit.MICROS));
-    System.out.println("-2 milissegundos: " + localTime.minus(2, ChronoUnit.MILLIS));
+    System.out.println("+2 hours: " + localTime.plusHours(2));
+    System.out.println("+2 minutes: " + localTime.plusMinutes(2));
+    System.out.println("+2 seconds: " + localTime.plusSeconds(2));
+    System.out.println("+2 nanoseconds: " + localTime.plusNanos(2));
+    System.out.println("+2 microseconds: " + localTime.plus(2, ChronoUnit.MICROS));
+    System.out.println("+2 milliseconds: " + localTime.plus(2, ChronoUnit.MILLIS));
+    System.out.println("-2 hours: " + localTime.minusHours(2));
+    System.out.println("-2 minutes: " + localTime.minusMinutes(2));
+    System.out.println("-2 seconds: " + localTime.minusSeconds(2));
+    System.out.println("-2 nanoseconds: " + localTime.minusNanos(2));
+    System.out.println("-2 microseconds: " + localTime.minus(2, ChronoUnit.MICROS));
+    System.out.println("-2 milliseconds " + localTime.minus(2, ChronoUnit.MILLIS));
     // end::code[]
   }
 }

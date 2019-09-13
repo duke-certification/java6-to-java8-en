@@ -8,13 +8,13 @@ public class Streams_Optional {
 
   public static void main(String[] args) {
     // tag::code[]
-    // Exemplo sem encadear a chamada de Optional
+    // Example without Chaining Optional Calling
     Optional<Integer> max = Stream.of(7, 2, 1)
         .max(Comparator.naturalOrder());
     
     max.ifPresent(System.out::println);
     
-    // Exemplo encadeando a chamada de Optional
+    // Example by Chaining Optional Calling
     Stream.of(7, 2, 1)
         .max(Comparator.naturalOrder())
         .ifPresent(System.out::println);

@@ -13,17 +13,16 @@ public class Files_CreateFile {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome);
 
-    // Utilizando um nome aleatório de arquivo,
-    // apenas para o exemplo executar inúmeras vezes sem problemas
-    String nomeAleatorio = "arquivo" + new Random().nextInt() + ".txt";
+    // Using a random file name, just for example to run countless times without problems
+    String randomName = "file" + new Random().nextInt() + ".txt";
     
-    Path path = Paths.get(userHome, nomeAleatorio);
+    Path path = Paths.get(userHome, randomName);
     System.out.println("Path: " + path);
 
     try {
-      System.out.println("Path existe? " + Files.exists(path));
+      System.out.println("Path exist? " + Files.exists(path));
       Files.createFile(path);
-      System.out.println("Path existe? " + Files.exists(path));
+      System.out.println("Path exist? " + Files.exists(path));
     } catch (IOException e) {
       e.printStackTrace();
     }

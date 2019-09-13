@@ -7,11 +7,11 @@ public class BuiltInInterfaces_FunctionExample {
 
   // tag::code[]
   public static void main(String[] args) {
-    Function<Integer, Double> duplica = x -> x * 2.5;
-    System.out.println(duplica.apply(3)); // multiplica 3 * 2.5
+    Function<Integer, Double> duplicate = x -> x * 2.5;
+    System.out.println(duplicate.apply(3)); // multiply 3 * 2.5
 
-    BiFunction<Integer, Integer, Double> multiplicaEDuplica = (x, y) -> x * y * 2.5;
-    System.out.println(multiplicaEDuplica.apply(3, 4)); // multiplica 3 * 4 * 2.5
+    BiFunction<Integer, Integer, Double> multiplyAndDuplicate = (x, y) -> x * y * 2.5;
+    System.out.println(multiplyAndDuplicate.apply(3, 4)); // multiply 3 * 4 * 2.5
   }
   // end::code[]
 

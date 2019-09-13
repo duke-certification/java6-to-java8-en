@@ -9,13 +9,13 @@ public class Concurrency_CollectionsSyncronized {
 
   public static void main(String[] args) {
     // tag::code[]
-    // Concurrent Map, garante o acesso de múltiplas threads
+    // Concurrent Map, ensures multi-threaded access
     Map<String, String> concurrentHashMap = new ConcurrentHashMap<>();
 
-    // Map Comum, NÃO garante o acesso de múltiplas threads
+    // Common Map, DOES NOT ensures multi-threaded access
     Map<String, String> map = new HashMap<>();
         
-    // Syncronized Map, garante o acesso de múltiplas threads
+    // Syncronized Map, ensures multi-threaded access
     Map<String, String> synchronizedMap = Collections.synchronizedMap(map);
     // end::code[]
   }

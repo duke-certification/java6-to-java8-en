@@ -10,19 +10,19 @@ public class Improvements_Walk {
   public static void main(String[] args) {
     // tag::code[]
     String userHome = System.getProperty("user.home");
-    Path path = Paths.get(userHome, "arquivos");
+    Path path = Paths.get(userHome, "files");
     System.out.println("Path: " + path);
 
     try {
-      System.out.println("\nTodos os arquivos e diretórios: ");
-      Files.walk(path) // cria o stream
-        .forEach(System.out::println); // imprime no console
+      System.out.println("\nAll files and directories: ");
+      Files.walk(path) // creates a stream
+        .forEach(System.out::println); // prints on console
     } catch (IOException e) {
       e.printStackTrace();
     }
     
     try {
-      System.out.println("\nOs primeiro 5 arquivos e diretórios: ");
+      System.out.println("\nThe first 5 files and directories: ");
       Files.walk(path)
         .limit(5)
         .forEach(System.out::println);

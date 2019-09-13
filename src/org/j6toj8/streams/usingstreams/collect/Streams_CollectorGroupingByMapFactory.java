@@ -9,9 +9,9 @@ public class Streams_CollectorGroupingByMapFactory {
 
   public static void main(String[] args) {
     // tag::code[]
-    // Armazena o resultado do Stream em um Mapa
-    // A Chave é o tamanho do nome
-    // O Valor são os nomes que tem aquele tamanho
+    // Store the result of the stream in a map
+    // The key is the name length
+    // Value is the names that have that size
     Map<Object, String> collect = Stream.of("Rinaldo", "Rodrigo", "Luiz", "Amélia", "Roseany")
       .collect(Collectors.groupingBy(s -> s.length(), TreeMap::new, Collectors.joining(",")));
     

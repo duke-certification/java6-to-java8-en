@@ -16,23 +16,23 @@ public class Files_BasicFileAttributeView {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome);
 
-    Path path = Paths.get(userHome, "arquivo.txt");
+    Path path = Paths.get(userHome, "file.txt");
     
     try {
       BasicFileAttributeView attributesView = Files.getFileAttributeView(path, BasicFileAttributeView.class);
-      BasicFileAttributes attributesAntigos = attributesView.readAttributes();
+      BasicFileAttributes oldAttributes = attributesView.readAttributes();
       
-      System.out.println("\nData de Criação original: " + attributesAntigos.creationTime());
-      System.out.println("Último acesso original: " + attributesAntigos.lastAccessTime());
-      System.out.println("Última modificação original: " + attributesAntigos.lastModifiedTime());
+      System.out.println("\nOriginal creation date: " + oldAttributes.creationTime());
+      System.out.println("Original last access: " + oldAttributes.lastAccessTime());
+      System.out.println("Original last modified: " + oldAttributes.lastModifiedTime());
       
       FileTime fileTime = FileTime.from(Instant.now().plusMillis(10000));
       attributesView.setTimes(fileTime, fileTime, fileTime);
       
-      BasicFileAttributes attributesNovos = attributesView.readAttributes();
-      System.out.println("\nData de Criação alterada: " + attributesNovos.creationTime());
-      System.out.println("Último acesso alterada: " + attributesNovos.lastAccessTime());
-      System.out.println("Última modificação alterada: " + attributesNovos.lastModifiedTime());
+      BasicFileAttributes newAttributes = attributesView.readAttributes();
+      System.out.println("\nCreation date changed: " + newAttributes.creationTime());
+      System.out.println("Last access changed: " + newAttributes.lastAccessTime());
+      System.out.println("Last modified changed: " + newAttributes.lastModifiedTime());
     } catch (IOException e) {
       e.printStackTrace();
     }

@@ -8,7 +8,7 @@ public class LocalDateTime_AdjustDifferentUnit {
     // tag::code[]
     LocalDateTime localDateTime = LocalDateTime.of(2019, 12, 31, 23, 59, 59);
     System.out.println(localDateTime);
-    System.out.println(localDateTime.plusSeconds(2)); // + 2 segundos, vira o ano
+    System.out.println(localDateTime.plusSeconds(2)); // + 2 seconds, turns the year
     // end::code[]
   }
 }

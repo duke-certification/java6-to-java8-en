@@ -11,17 +11,17 @@ public class Collections_MaxMinCount {
     List<Integer> list = Arrays.asList(1,2,3,4,5,6,7,8,9);
     
     OptionalInt max = list.stream()
-      .mapToInt(Integer::intValue) // transforma para int
+      .mapToInt(Integer::intValue) // transform to int
       .max();
     System.out.println("Max: " + max.getAsInt());
 
     OptionalInt min = list.stream()
-        .mapToInt(Integer::intValue) // transforma para int
+        .mapToInt(Integer::intValue) // transform to int
         .min();
       System.out.println("Min: " + min.getAsInt());
 
     long count = list.stream()
-        .mapToInt(Integer::intValue) // transforma para int
+        .mapToInt(Integer::intValue) // transform to int
         .count();
       System.out.println("Count: " + count);
     // end::code[]

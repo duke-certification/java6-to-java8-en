@@ -10,21 +10,21 @@ public class Improvements_Lines {
   public static void main(String[] args) {
     // tag::code[]
     String userHome = System.getProperty("user.home");
-    Path path = Paths.get(userHome, "arquivos", "subpasta1", "arquivo11.txt");
+    Path path = Paths.get(userHome, "files", "subfolder1", "file11.txt");
     System.out.println("Path: " + path);
 
     try {
-      System.out.println("\nConteúdo do arquivo: ");
-      Files.lines(path) // recupera todas as linhas do arquivo como Stream
+      System.out.println("\nFile content: ");
+      Files.lines(path) // retrieves all file lines as Stream
         .forEach(System.out::println);
     } catch (IOException e) {
       e.printStackTrace();
     }
     
     try {
-      System.out.println("\nConteúdo do arquivo maior que 2: ");
+      System.out.println("\nFile contents greater than 2: ");
       Files.lines(path)
-        .filter(s -> Integer.parseInt(s) > 2) // filtra maior que 2
+        .filter(s -> Integer.parseInt(s) > 2) // filters greater than 2
         .forEach(System.out::println);
     } catch (IOException e) {
       e.printStackTrace();

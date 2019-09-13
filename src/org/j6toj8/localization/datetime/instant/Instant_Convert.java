@@ -13,7 +13,7 @@ public class Instant_Convert {
     System.out.println(localDateTime.toInstant(ZoneOffset.UTC));
     System.out.println(localDateTime.toInstant(ZoneOffset.of("-3")));
     
-    Instant instant = Instant.ofEpochSecond(1558962061L); // mesma data do localDateTime
+    Instant instant = Instant.ofEpochSecond(1558962061L); // same date as localDateTime
     System.out.println("\nInstant: " + instant);
     System.out.println(LocalDateTime.ofInstant(instant, ZoneOffset.UTC));
     System.out.println(LocalDateTime.ofInstant(instant, ZoneOffset.of("-3")));

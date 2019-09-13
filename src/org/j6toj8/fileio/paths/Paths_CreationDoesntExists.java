@@ -10,7 +10,7 @@ public class Paths_CreationDoesntExists {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome);
 
-    Path path = Paths.get(userHome, "arquivoQueNaoExiste.txt");
+    Path path = Paths.get(userHome, "fileThatDoesNotExist.txt");
     System.out.println("Path: " + path);
     // end::code[]
   }

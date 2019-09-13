@@ -6,16 +6,16 @@ public class BuiltInInterfaces_OptionalNullable {
 
   // tag::code[]
   public static void main(String[] args) {
-    // Exemplo tentando utilizar .of e passando 'null' como argumento
+    // Example trying to use .of and passing 'null' as argument
     try {
-      Optional.of(null); // Lança NullPointerException nesta linha
+      Optional.of(null); // Throws NullPointerException on this line
     } catch (Exception e) {
       e.printStackTrace();
     }
     
-    // Exemplo utilizando o método correto: .ofNullable
+    // Example using the correct method: .ofNullable
     Optional<String> ofNullable = Optional.ofNullable(null); // Cria um Optional vazio
-    System.out.println(ofNullable.isPresent()); // Imprime 'false' pois não possui valor
+    System.out.println(ofNullable.isPresent()); // Print 'false' as it has no value
   }
   // end::code[]
   

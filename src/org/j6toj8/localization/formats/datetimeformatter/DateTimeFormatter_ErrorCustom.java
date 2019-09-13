@@ -17,7 +17,7 @@ public class DateTimeFormatter_ErrorCustom {
 
     System.out.println(localDT.format(formatter));
     System.out.println(localTime.format(formatter));
-    System.out.println(localDate.format(formatter)); // lança exceção pois não possui campos de hora
+    System.out.println(localDate.format(formatter)); // throws exception because it has no time fields
     // end::code[]
   }
 }

@@ -8,18 +8,18 @@ import java.util.function.Supplier;
 public class BuiltInInterfaces_SupplierUseCase {
 
   // tag::code[]
-  public static String valideIdade(int idade, Supplier<String> supplier) {
-    if (idade < 18) {
-      return "Menor de idade!";
+  public static String validateAge(int age, Supplier<String> supplier) {
+    if (age < 18) {
+      return "Under age!";
     } else {
-      return "Maior de idade! Validação realizada às " + supplier.get();
+      return "Major age! Validation performed at " + supplier.get();
     }
   }
   
   public static void main(String[] args) {
     Supplier<String> supplier = () -> LocalDate.now().atTime(LocalTime.now()).format(DateTimeFormatter.ISO_DATE_TIME);
-    System.out.println(valideIdade(17, supplier));
-    System.out.println(valideIdade(18, supplier));
+    System.out.println(validateAge(17, supplier));
+    System.out.println(validateAge(18, supplier));
   }
   // end::code[]
   

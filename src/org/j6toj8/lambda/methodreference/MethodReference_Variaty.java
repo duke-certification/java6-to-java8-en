@@ -6,7 +6,7 @@ public class MethodReference_Variaty {
 
   public static void main(String[] args) {
     // tag::code[]
-    // ATENÇÃO! Todas essas expressões lambda são equivalentes!
+    // ATTENTION! All of these lambda expressions are equivalent!
     
     Function<Integer, String> lambda1 = (Integer x) -> { return String.valueOf(x); };
     Function<Integer, String> lambda2 = (x) -> { return String.valueOf(x); };

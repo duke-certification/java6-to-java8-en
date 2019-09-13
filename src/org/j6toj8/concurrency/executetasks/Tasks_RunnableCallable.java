@@ -11,17 +11,17 @@ public class Tasks_RunnableCallable {
     try {
       executor = Executors.newSingleThreadExecutor();
 
-      // tarefa sem retorno, instância de Runnable
+      // task without return, instance of Runnable
       executor.submit(() -> System.out.println("Runnable"));
 
-      // tarefa com retorno, instância de Callable
+      // task with return, instance of Callable
       executor.submit(() -> "Callable");
-      
-      // tarefa que lança uma Exception deve ser Callable, logo deve ter retorno
+
+      // task that throws an Exception must be Callable, then needs to return
       executor.submit(() -> {Thread.sleep(1); return "Callable";});
 
-      // tarefa que lança uma Exception, mas não declara retorno
-      // NÃO COMPILA pois é interpretada como Runnable
+      // task that throws an Exception, but declares no return
+      // NOT COMPILING as it is interpreted as Runnable
       executor.submit(() -> Thread.sleep(1));
       
     } finally {

@@ -4,16 +4,16 @@ public class LambdaExpression_AnonymousClass {
 
   public static void main(String[] args) {
     // tag::code[]
-    // com classe anônima
+    // with anonymous class
     new Thread(new Runnable() {
       @Override
       public void run() {
-        System.out.println("Executando.");
+        System.out.println("Executing.");
       }
     }).run();
 
-    // com expressão lambda
-    new Thread(() -> System.out.println("Executando.")).run();
+    // with lambda expression
+    new Thread(() -> System.out.println("Executing.")).run();
     // end::code[]
   }
 }

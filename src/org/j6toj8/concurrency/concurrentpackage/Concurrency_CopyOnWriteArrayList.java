@@ -19,7 +19,7 @@ public class Concurrency_CopyOnWriteArrayList {
       }
     }
     
-    System.out.println("Lista final: " + list);
+    System.out.println("Final list: " + list);
     // end::code[]
   }
   

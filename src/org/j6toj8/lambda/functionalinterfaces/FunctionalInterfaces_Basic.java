@@ -3,9 +3,9 @@ package org.j6toj8.lambda.functionalinterfaces;
 public class FunctionalInterfaces_Basic {
 
   // tag::code[]
-  @FunctionalInterface // a anotação não é obrigatória
-  interface Executavel { // interface funcional
-    void execute(); // método funcional
+  @FunctionalInterface // annotation is not required
+  interface Executavel { // functional interface
+    void execute(); // functional method
   }
   // end::code[]
 }

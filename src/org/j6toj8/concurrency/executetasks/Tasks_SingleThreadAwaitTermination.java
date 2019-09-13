@@ -14,9 +14,9 @@ public class Tasks_SingleThreadAwaitTermination {
     try {
       executor = Executors.newSingleThreadExecutor();
       
-      executor.execute(() -> System.out.println("Tarefa 1 - Thread do Executor: " + Thread.currentThread().getName()));
-      executor.execute(() -> System.out.println("Tarefa 2 - Thread do Executor: " + Thread.currentThread().getName()));
-      executor.execute(() -> System.out.println("Tarefa 3 - Thread do Executor: " + Thread.currentThread().getName()));      
+      executor.execute(() -> System.out.println("Task 1 - Executor Thread: " + Thread.currentThread().getName()));
+      executor.execute(() -> System.out.println("Task 2 - Executor Thread: " + Thread.currentThread().getName()));
+      executor.execute(() -> System.out.println("Task 3 - Executor Thread: " + Thread.currentThread().getName()));
     } finally {
       if (executor != null) {
         executor.shutdown();
@@ -25,11 +25,11 @@ public class Tasks_SingleThreadAwaitTermination {
     
     if (executor != null) {
       try {
-        System.out.println("Tarefas finalizadas? " + executor.isTerminated());
+        System.out.println("Tasks completed? " + executor.isTerminated());
         executor.awaitTermination(1, TimeUnit.SECONDS);
-        System.out.println("Tarefas finalizadas? " + executor.isTerminated());
+        System.out.println("Tasks completed? " + executor.isTerminated());
       } catch (InterruptedException e) {
-        System.out.println("Erro de interrupção.");
+        System.out.println("Interruption error.");
       }
     }
     // end::code[]

@@ -8,9 +8,9 @@ public class Streams_CollectorMapping {
 
   public static void main(String[] args) {
     // tag::code[]
-    // Armazena o resultado do Stream em um Mapa
-    // A Chave é o tamanho do nome
-    // O Valor são os nomes que tem aquele tamanho, convertidos para maiúscula, separados por vírgula
+    // Store the result of the stream in a map
+    // The key is the name length
+    // The Value is the names with that size, converted to uppercase, separated by comma
     Map<Integer, String> collect = Stream.of("Rinaldo", "Rodrigo", "Luiz", "Amélia", "Roseany")
       .collect(Collectors.groupingBy(s -> s.length(), Collectors.mapping(s -> s.toUpperCase(), Collectors.joining(","))));
     

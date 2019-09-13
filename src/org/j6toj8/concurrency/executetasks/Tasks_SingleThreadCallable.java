@@ -12,12 +12,12 @@ public class Tasks_SingleThreadCallable {
     ExecutorService executor = null;
     try {
       executor = Executors.newSingleThreadExecutor();
-      Future<?> retornoDaTarefa = executor.submit(() -> "String que será retornada");
-      
-      // O .get() abaixo irá esperar a tarefa finalizar para pegar seu retorno
-      System.out.println("Retorno da tarefa: " + retornoDaTarefa.get());
+      Future<?> taskReturn = executor.submit(() -> "String to be returned");
+
+      // The .get() below will wait for the task to finish to get its return
+      System.out.println("Task Return: " + taskReturn.get());
     } catch (InterruptedException | ExecutionException e) {
-      System.out.println("Execução interrompida.");
+      System.out.println("Execution stopped.");
     } finally {
       if (executor != null) {
         executor.shutdown();

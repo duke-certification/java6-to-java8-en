@@ -21,7 +21,7 @@ public class Duration_Compatibility {
     System.out.println("LocalTime + Duration: " + localTime.plus(period));
     
     LocalDateTime localDateTime = LocalDateTime.of(2018, 05, 27, 13, 1, 1);
-    System.out.println("\nLocalDateTime: " +localDateTime);
+    System.out.println("\nLocalDateTime: " + localDateTime);
     System.out.println("LocalDateTime + Duration: " + localDateTime.plus(period));
     // end::code[]
   }

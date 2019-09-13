@@ -9,16 +9,14 @@ public class Collections_FlatMap {
     // tag::code[]
     List<String> list = Arrays.asList("Manoel");
     
-    System.out.println("\n Com map: ");
-    // com map - as letras da String viram 
-    // um Stream dentro de outro Stream
+    System.out.println("\n With map: ");
+    // com map - String letters become Stream within Stream
     list.stream()
       .map(s -> Arrays.stream(s.split("")))
       .forEach(System.out::println);
     
-    System.out.println("\n Com flatMap: ");
-    // com flatMap - as letras da String viram dados
-    // do próprio Stream
+    System.out.println("\n With flatMap: ");
+    // with flatMap - String letters become data of the Stream
     list.stream()
       .flatMap(s -> Arrays.stream(s.split("")))
       .forEach(System.out::println);

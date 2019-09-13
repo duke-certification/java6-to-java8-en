@@ -19,7 +19,7 @@ public class SimpleDateFormat_Parse {
       System.out.println(simpleDateTime.parse(dateTime));
       System.out.println(simpleDate.parse(date));
       System.out.println(simpleTime.parse(time));
-      System.out.println(simpleDateTime.parse(time)); // exceção, pois time não tem data
+      System.out.println(simpleDateTime.parse(time)); // exception because time has no date
     } catch (ParseException e) {
       System.out.println(e.getMessage());
     }

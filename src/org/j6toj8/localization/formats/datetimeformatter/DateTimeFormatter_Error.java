@@ -16,7 +16,7 @@ public class DateTimeFormatter_Error {
     System.out.println(localDate.format(DateTimeFormatter.ISO_LOCAL_DATE));
     System.out.println(localDT.format(DateTimeFormatter.ISO_LOCAL_DATE));
 
-    // lança exceção pois não possui campos de data
+    // throws exception because it has no date fields
     System.out.println(localTime.format(DateTimeFormatter.ISO_LOCAL_DATE));
     // end::code[]
   }

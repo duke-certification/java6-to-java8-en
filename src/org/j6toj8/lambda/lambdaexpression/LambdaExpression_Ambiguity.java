@@ -4,29 +4,29 @@ public class LambdaExpression_Ambiguity {
 
   // tag::code[]
   @FunctionalInterface
-  interface Corredor {
-    void corra();
+  interface Runner {
+    void run();
   }
 
   @FunctionalInterface
-  interface Piloto {
-    void corra();
+  interface Pilot {
+    void run();
   }
 
   static class Executor {
-    void execute(Corredor corredor) {
-      corredor.corra();
+    void execute(Runner runner) {
+      runner.run();
     }
 
-    String execute(Piloto piloto) {
-      piloto.corra();
-      return "correndo";
+    String execute(Pilot pilot) {
+      pilot.run();
+      return "running";
     }
   }
 
   public static void main(String[] args) {
     Executor executor = new Executor();
-    // NÃO COMPILA - não é possível determinar o tipo da expressão lambda abaixo
+    // NOT COMPILING - cannot determine type of lambda expression below
     executor.execute(() -> System.out.println("execute"));
   }
   // end::code[]

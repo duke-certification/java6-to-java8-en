@@ -13,25 +13,24 @@ import java.util.HashSet;
 public class Recursive_VisitorOptionsAndDepth {
 
   // tag::code[]
-  static class MeuFileVisitor extends SimpleFileVisitor<Path> {
+  static class MyFileVisitor extends SimpleFileVisitor<Path> {
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-      System.out.println("Arquivo visitado: " + file);
+      System.out.println("Visited file: " + file);
       return FileVisitResult.CONTINUE;
     }
   }
   
   public static void main(String[] args) {
     String userHome = System.getProperty("user.home");
-    Path path = Paths.get(userHome, "arquivos");
+    Path path = Paths.get(userHome, "files");
     System.out.println("Path: " + path);
     try {
       HashSet<FileVisitOption> opcoes = new HashSet<FileVisitOption>();
       opcoes.add(FileVisitOption.FOLLOW_LINKS);
-      
-      // visita a árvore com limite de profundidade 2
-      // e com a opção de também visitar links simbólicos
-      Files.walkFileTree(path, opcoes, 2, new MeuFileVisitor());
+
+      // visit tree with depth limit 2 and option to also visit symbolic links
+      Files.walkFileTree(path, opcoes, 2, new MyFileVisitor());
     } catch (IOException e) {
       e.printStackTrace();
     }

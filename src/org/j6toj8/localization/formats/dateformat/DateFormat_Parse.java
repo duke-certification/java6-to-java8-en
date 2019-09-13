@@ -19,7 +19,7 @@ public class DateFormat_Parse {
       System.out.println(dateInstance.parse(date));
       System.out.println(timeInstance.parse(time));
       System.out.println(dateTimeInstance.parse(dateTime));
-      System.out.println(dateTimeInstance.parse(date)); // exceção, pois date não tem hora
+      System.out.println(dateTimeInstance.parse(date)); // exception because date has no time
     } catch (ParseException e) {
       System.out.println(e.getMessage());
     }
