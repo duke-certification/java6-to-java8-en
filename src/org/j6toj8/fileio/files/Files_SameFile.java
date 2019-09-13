@@ -12,17 +12,17 @@ public class Files_SameFile {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome);
 
-    Path path1 = Paths.get(userHome, "arquivo1.txt");
-    Path path2 = Paths.get("/", "home", "rinaldo", "arquivo1.txt");
-    Path path3 = Paths.get("/home/rinaldo/arquivo1.txt");
-    Path path4 = Paths.get("/home/rinaldo/Downloads/../arquivo1.txt");
+    Path path1 = Paths.get(userHome, "file1.txt");
+    Path path2 = Paths.get("/", "home", "rinaldo", "file1.txt");
+    Path path3 = Paths.get("/home/rinaldo/file1.txt");
+    Path path4 = Paths.get("/home/rinaldo/Downloads/../file1.txt");
     
     try {
-      // todos os Path são iguais
-      System.out.println("Path 1 e Path 2 são iguais? " + Files.isSameFile(path1, path2));
-      System.out.println("Path 2 e Path 3 são iguais? " + Files.isSameFile(path2, path3));
-      System.out.println("Path 3 e Path 4 são iguais? " + Files.isSameFile(path3, path4));
-      System.out.println("Path 1 e Path 4 são iguais? " + Files.isSameFile(path1, path4));
+      // all Paths are equal
+      System.out.println("Are Path 1 and Path 2 the same? " + Files.isSameFile(path1, path2));
+      System.out.println("Are Path 2 and Path 3 the same? " + Files.isSameFile(path2, path3));
+      System.out.println("Are Path 3 and Path 4 the same? " + Files.isSameFile(path3, path4));
+      System.out.println("Are Path 1 and Path 4 the same? " + Files.isSameFile(path1, path4));
     } catch (IOException e) {
       e.printStackTrace();
     }

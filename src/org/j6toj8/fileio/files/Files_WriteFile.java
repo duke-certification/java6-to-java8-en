@@ -15,22 +15,20 @@ public class Files_WriteFile {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome);
 
-    // Utilizando um nome aleatório de arquivo,
-    // apenas para o exemplo executar inúmeras vezes sem problemas
-    String nomeAleatorio = "arquivo" + new Random().nextInt() + ".txt";
+    // Using a random file name, just for example to run countless times without problems
+    String randomName = "file" + new Random().nextInt() + ".txt";
     
-    Path path = Paths.get(userHome, nomeAleatorio);
+    Path path = Paths.get(userHome, randomName);
     System.out.println("Path: " + path);
     try {
-      System.out.println("Path existe? " + Files.exists(path));
-      Files.createFile(path); // cria o arquivo
-      System.out.println("Path existe? " + Files.exists(path));
+      System.out.println("Path exist? " + Files.exists(path));
+      Files.createFile(path);
+      System.out.println("Path exist? " + Files.exists(path));
     } catch (IOException e1) {
       e1.printStackTrace();
     }
 
     try (BufferedWriter bw = Files.newBufferedWriter(path)) {
-      // escreve no arquivo
       bw.write("1");
       bw.write("2");
       bw.write("3");
@@ -39,8 +37,7 @@ public class Files_WriteFile {
     }
     
     try (BufferedReader br = Files.newBufferedReader(path)) {
-      // lê as linhas do arquivo
-      String line = br.readLine(); 
+      String line = br.readLine();
       do {
         System.out.println(line);
       } while (br.readLine() != null);

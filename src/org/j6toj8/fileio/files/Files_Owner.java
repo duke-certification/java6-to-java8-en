@@ -16,23 +16,22 @@ public class Files_Owner {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome);
 
-    // Utilizando um nome aleatório de arquivo,
-    // apenas para o exemplo executar inúmeras vezes sem problemas
-    String nomeAleatorio = "arquivo" + new Random().nextInt() + ".txt";
+    // Using a random file name, just for example to run countless times without problems
+    String randomName = "file" + new Random().nextInt() + ".txt";
     
-    Path path = Paths.get(userHome, nomeAleatorio);
+    Path path = Paths.get(userHome, randomName);
     System.out.println("Path: " + path);
 
     try {
       Files.createFile(path);
-      System.out.println(Files.getOwner(path)); // imprime o owner atual
-      
-      // Pega o serviço do sistema para buscar um usuário
+      System.out.println(Files.getOwner(path)); // print the current owner
+
+      // Get system service to fetch a user
       UserPrincipalLookupService service = FileSystems.getDefault().getUserPrincipalLookupService();
-      // Busca pelo usuário com nome 'rinaldo'
+      // Search for user with name 'rinaldo'
       UserPrincipal userPrincipal = service.lookupPrincipalByName("rinaldo");
       
-      Files.setOwner(path, userPrincipal); // altera o owner
+      Files.setOwner(path, userPrincipal); // change owner
       System.out.println(Files.getOwner(path));
     } catch (IOException e) {
       e.printStackTrace();

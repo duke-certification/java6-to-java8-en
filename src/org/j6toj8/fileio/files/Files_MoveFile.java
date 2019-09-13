@@ -13,22 +13,22 @@ public class Files_MoveFile {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome);
 
-    String nomeAleatorio = "arquivo" + new Random().nextInt() + ".txt";
+    String randomName = "arquivo" + new Random().nextInt() + ".txt";
     
-    Path arquivoOrigem = Paths.get(userHome, nomeAleatorio);
-    Path arquivoDestino = Paths.get(userHome, nomeAleatorio + "-movido.txt");
-    System.out.println("Path Arquivo Origem: " + arquivoOrigem);
-    System.out.println("Path Arquivo Destino: " + arquivoDestino);
+    Path sourceFile = Paths.get(userHome, randomName);
+    Path destinationFile = Paths.get(userHome, randomName + "-moved.txt");
+    System.out.println("Path Source File: " + sourceFile);
+    System.out.println("Path Destination File: " + destinationFile);
     
     try {
-      System.out.println("Arquivo origem existe? " + Files.exists(arquivoOrigem));
-      Files.createFile(arquivoOrigem);
-      System.out.println("Arquivo origem existe? " + Files.exists(arquivoOrigem));
+      System.out.println("Source File exist? " + Files.exists(sourceFile));
+      Files.createFile(sourceFile);
+      System.out.println("Source File exist? " + Files.exists(sourceFile));
       
-      System.out.println("Arquivo destino existe? " + Files.exists(arquivoDestino));
-      Files.move(arquivoOrigem, arquivoDestino);
-      System.out.println("Arquivo destino existe? " + Files.exists(arquivoDestino));
-      System.out.println("Arquivo origem existe? " + Files.exists(arquivoOrigem));
+      System.out.println("Destination File exist? " + Files.exists(destinationFile));
+      Files.move(sourceFile, destinationFile);
+      System.out.println("Destination File exist? " + Files.exists(destinationFile));
+      System.out.println("Source File exist? " + Files.exists(sourceFile));
     } catch (IOException e) {
       e.printStackTrace();
     }

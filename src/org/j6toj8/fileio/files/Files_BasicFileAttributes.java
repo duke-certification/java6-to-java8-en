@@ -13,20 +13,20 @@ public class Files_BasicFileAttributes {
     String userHome = System.getProperty("user.home");
     System.out.println("User home: " + userHome);
 
-    Path path = Paths.get(userHome, "arquivo.txt");
+    Path path = Paths.get(userHome, "file.txt");
     
     try {
       BasicFileAttributes attributes = Files.readAttributes(path, BasicFileAttributes.class);
-      System.out.println("Tamanho: " + attributes.size());
+      System.out.println("Size: " + attributes.size());
       
-      System.out.println("É diretório? " + attributes.isDirectory());
-      System.out.println("É link simbólico? " + attributes.isSymbolicLink());
-      System.out.println("É um arquivo comum? " + attributes.isRegularFile());
-      System.out.println("Não é nenhuma das opções acima? " + attributes.isOther());
+      System.out.println("Is it directory? " + attributes.isDirectory());
+      System.out.println("Is it symbolic link? " + attributes.isSymbolicLink());
+      System.out.println("Is it a common file? " + attributes.isRegularFile());
+      System.out.println("Not any of the above? " + attributes.isOther());
       
-      System.out.println("Data de Criação: " + attributes.creationTime());
-      System.out.println("Último acesso: " + attributes.lastAccessTime());
-      System.out.println("Última modificação: " + attributes.lastModifiedTime());
+      System.out.println("Creation date: " + attributes.creationTime());
+      System.out.println("Last acess: " + attributes.lastAccessTime());
+      System.out.println("Last Modified: " + attributes.lastModifiedTime());
     } catch (IOException e) {
       e.printStackTrace();
     }
