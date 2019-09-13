@@ -10,12 +10,12 @@ public class Collections_Merge {
     map.put(1, "String1-");
     map.put(2, "String2-");
     
-    System.out.println("Map antes do merge: " + map);
+    System.out.println("Map before merge: " + map);
     map.merge(1, "StringA", (v1, v2) -> v1.concat(v2));
     map.merge(2, "StringB", (v1, v2) -> v1.concat(v2));
     map.merge(3, "StringC", (v1, v2) -> v1.concat(v2));
     map.merge(4, "StringD", (v1, v2) -> v1.concat(v2));
-    System.out.println("Map depois do merge: " + map);
+    System.out.println("Map after merge: " + map);
     // end::code[]
   }
  }
