@@ -11,24 +11,23 @@ import java.nio.file.attribute.BasicFileAttributes;
 public class Recursive_SimpleFileVisitor {
 
   // tag::code[]
-  // Implementação simples de um SimpleFileVisitor
-  static class MeuFileVisitor extends SimpleFileVisitor<Path> {
+  // Simple Implementation of a SimpleFileVisitor
+  static class MyFileVisitor extends SimpleFileVisitor<Path> {
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-      // Método que será invocado a cada arquivo encontrado
-      System.out.println("Arquivo visitado: " + file + ". Tamanho: " + attrs.size());
-      return FileVisitResult.CONTINUE; // instrui o FileVisitor a continuar seguindo a árvore de arquivos
+      // Method that will be invoked for each file found
+      System.out.println("Visited file: " + file + ". Size: " + attrs.size());
+      return FileVisitResult.CONTINUE; // instructs FileVisitor to continue following the file tree
     }
   }
   
   public static void main(String[] args) {
     String userHome = System.getProperty("user.home");
-    Path path = Paths.get(userHome, "arquivos");
+    Path path = Paths.get(userHome, "files");
     System.out.println("Path: " + path);
     try {
-      // Utilização da classe MeuFileVisitor para acessar
-      // todos os arquivos no diretório e seus subdiretórios
-      Files.walkFileTree(path, new MeuFileVisitor());
+      // Using the MyFileVisitor class to access all files in the directory and their subdirectories.
+      Files.walkFileTree(path, new MyFileVisitor());
     } catch (IOException e) {
       e.printStackTrace();
     }

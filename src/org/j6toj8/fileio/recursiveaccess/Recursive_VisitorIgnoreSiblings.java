@@ -11,13 +11,12 @@ import java.nio.file.attribute.BasicFileAttributes;
 public class Recursive_VisitorIgnoreSiblings {
 
   // tag::code[]
-  static class MeuFileVisitor extends SimpleFileVisitor<Path> {
+  static class MyFileVisitor extends SimpleFileVisitor<Path> {
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-      System.out.println("Arquivo visitado: " + file + ". Tamanho: " + attrs.size());
-      if (file.getFileName().toString().equals("arquivo11.txt")) {
-        // ao encontrar o arquivo11.txt irá parar de visitar qualquer
-        // diretório ou arquivo que seja "irmão" (que está lado a lado)
+      System.out.println("Visited file: " + file + ". Size: " + attrs.size());
+      if (file.getFileName().toString().equals("file11.txt")) {
+        // finding file11.txt will stop visiting any directory or file that is "sibling" (which is side by side)
         return FileVisitResult.SKIP_SIBLINGS;
       }
       return FileVisitResult.CONTINUE;
@@ -26,10 +25,10 @@ public class Recursive_VisitorIgnoreSiblings {
   
   public static void main(String[] args) {
     String userHome = System.getProperty("user.home");
-    Path path = Paths.get(userHome, "arquivos");
+    Path path = Paths.get(userHome, "files");
     System.out.println("Path: " + path);
     try {
-      Files.walkFileTree(path, new MeuFileVisitor());
+      Files.walkFileTree(path, new MyFileVisitor());
     } catch (IOException e) {
       e.printStackTrace();
     }
