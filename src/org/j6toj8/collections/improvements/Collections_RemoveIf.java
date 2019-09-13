@@ -10,9 +10,9 @@ public class Collections_RemoveIf {
     // tag::code[]
     List<Integer> list = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9));
     
-    System.out.println("Lista antes do removeIf: " + list);
-    list.removeIf(n -> n % 2 == 0); // remove números pares
-    System.out.println("Lista depois do removeIf: " + list);
+    System.out.println("List before removeIf: " + list);
+    list.removeIf(n -> n % 2 == 0); // remove even numbers
+    System.out.println("List after removeIf: " + list);
     // end::code[]
   }
  }

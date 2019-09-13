@@ -10,10 +10,10 @@ public class Collections_ComputeIfAbsent {
     map.put("A", "A".hashCode());
     map.put("B", "B".hashCode());
     
-    System.out.println("Map antes do computeIfAbsent: " + map);
+    System.out.println("Map before computeIfAbsent: " + map);
     map.computeIfAbsent("A", k -> k.hashCode());
     map.computeIfAbsent("C", k -> k.hashCode());
-    System.out.println("Map depois do computeIfAbsent: " + map);
+    System.out.println("Map after computeIfAbsent: " + map);
     // end::code[]
   }
  }

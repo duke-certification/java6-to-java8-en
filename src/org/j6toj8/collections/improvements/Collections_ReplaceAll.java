@@ -10,9 +10,9 @@ public class Collections_ReplaceAll {
     // tag::code[]
     List<Integer> list = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9));
     
-    System.out.println("Lista antes do replaceAll: " + list);
-    list.replaceAll(n -> n * 2); // multiplica todos os elementos por 2
-    System.out.println("Lista depois do replaceAll: " + list);
+    System.out.println("List before replaceAll: " + list);
+    list.replaceAll(n -> n * 2); // multiply all elements by 2
+    System.out.println("List after replaceAll: " + list);
     // end::code[]
   }
  }
