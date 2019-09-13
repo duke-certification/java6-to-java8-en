@@ -9,22 +9,22 @@ public class Collections_Diamond {
 
   public static void main(String[] args) {
     // tag::code[]
-    List<String> l1 = new ArrayList<String>(); // sem diamond
-    List<String> l2 = new ArrayList<>(); // com diamond
-    List<> l3 = new ArrayList<String>(); // NÃO COMPILA - diamond só pode ser utilizado do lado direito 
+    List<String> l1 = new ArrayList<String>(); // without diamond
+    List<String> l2 = new ArrayList<>(); // with diamond
+    List<> l3 = new ArrayList<String>(); // NOT COMPILING - diamond can only be used on the right side
     
-    Map<String, String> m1 = new HashMap<String, String>(); // sem diamond
-    Map<String, String> m2 = new HashMap<>(); // com diamond
-    Map<> m3 = new HashMap<String, String>(); // NÃO COMPILA - diamond só do lado direito
+    Map<String, String> m1 = new HashMap<String, String>(); // without diamond
+    Map<String, String> m2 = new HashMap<>(); // with diamond
+    Map<> m3 = new HashMap<String, String>(); // NOT COMPILING - diamond can only be used on the right side
 
-    Map<List<String>, List<String>> m4 = new HashMap<List<String>, List<String>>(); // sem diamond
-    Map<List<String>, List<String>> m5 = new HashMap<>(); // com diamond
-    Map<List<String>, List<String>> m6 = new HashMap<<>,<>>(); // NÃO COMPILA - a única sintaxe válida é <>
-    Map<List<String>, List<String>> m7 = new HashMap<List<String>, <>>(); // NÃO COMPILA - a única sintaxe válida é <>
+    Map<List<String>, List<String>> m4 = new HashMap<List<String>, List<String>>(); // without diamond
+    Map<List<String>, List<String>> m5 = new HashMap<>(); // with diamond
+    Map<List<String>, List<String>> m6 = new HashMap<<>,<>>(); // NOT COMPILING - the only valid syntax is <>
+    Map<List<String>, List<String>> m7 = new HashMap<List<String>, <>>(); // NOT COMPILING - the only valid syntax is <>
     
-    Map<Map<List<String>, List<String>>, Map<List<String>, List<String>>> m8 = new HashMap<>(); // com diamond
+    Map<Map<List<String>, List<String>>, Map<List<String>, List<String>>> m8 = new HashMap<>(); // with diamond
     
-    Map<> m9 = new HashMap<>(); // NÃO COMPILA - é necessário informar o tipo do lado esquerdo
+    Map<> m9 = new HashMap<>(); // NOT COMPILING - it's necessary to inform the type on the left side
     // end::code[]
   }
   
