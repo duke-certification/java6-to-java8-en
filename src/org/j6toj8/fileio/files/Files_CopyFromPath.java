@@ -24,7 +24,7 @@ public class Files_CopyFromPath {
       
       Path createdPath = Paths.get(userHome, randomName);
       System.out.println("Created Path: " + createdPath);
-      System.out.println("Created Path exist?: " + Files.exists(createdPath));
+      System.out.println("Created Path exist? " + Files.exists(createdPath));
     } catch (IOException e) {
       e.printStackTrace();
     }
