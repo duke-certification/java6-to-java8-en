@@ -11,7 +11,7 @@ public class Collections_ComputeIfPresent {
     map.put("B", "B".hashCode());
     
     System.out.println("Map before computeIfPresent: " + map);
-    // k = chave; v = valor
+    // k = key; v = value
     map.computeIfPresent("A", (k, v) -> k.hashCode() * v);
     map.computeIfPresent("B", (k, v) -> k.hashCode() * v);
     map.computeIfPresent("C", (k, v) -> k.hashCode() * v);
